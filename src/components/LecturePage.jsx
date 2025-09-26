@@ -1,7 +1,11 @@
-export function LecturePage() {
+import { aristsData } from "../artistdata";
+
+export function LecturePage(props) {
+  const lectureData = props.lectureData;
+  console.log(lectureData);
   return (
     <div>
-      <h1>אריס סאן - "הוא לא היה איש חכם, אין מה לעשות..." </h1>
+      <h1>{lectureData.header}</h1>
 
       <h2 className="text-center">על ההרצאה</h2>
       <p className="text-justify">
