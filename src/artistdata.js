@@ -1,20 +1,6 @@
-export const aristsData = [
+export const artistsData = [
   {
-    name: "עלי",
-    picture:
-      "https://images.cdn-files-a.com/uploads/6918488/2000_65c646aa59e06.jpg",
-    header: "הרצאות ממש ממש מעניינות",
-    onartist: `אז מה עשיתי ב-20 השנים האחרונות?
-הדרכתי.
-הדרכתי פעוטות, ילדים, בני-נוער ומבוגרים. הדרכתי בתנועות נוער, ועדי עובדים, חיילים וקצינים בצה"ל. הדרכתי במוזאונים, בטיולים, בסיורים לימודיים-תכניים, בהרצאות ובשיעורים.
-חוץ מזה – אני מנגן, הרבה.
-אם יש לזה מיתרים – רוב הסיכויים שאני יכול לנגן על זה. נכון, יש נגנים טובים ממני – אז מזל שאני לא עושה מופעי מוזיקה.
-והדבר שאני הכי אוהב לעשות בעולם – זה לספר סיפורים: סיפורים עשירים, מעניינים ומורכבים על דמויות ואירועים גדולים וקטנים, שהשפיעו על החיים של כולנו, ועיצבו את הזהות והתרבות שלנו, כאן בישראל.`,
-    onlecture: ``,
-    bgColor: "bg-stone-50 ",
-  },
-  {
-    name: "aris-san",
+    name: "אריס סאן",
     picture:
       "https://images.cdn-files-a.com/uploads/6918488/2000_65c646aa59e06.jpg",
     header: "הוא לא היה איש חכם, אין מה לעשות",
@@ -28,7 +14,7 @@ export const aristsData = [
     bgColor: "bg-amber-50 ",
   },
   {
-    name: "bialik",
+    name: "ביאליק",
     picture:
       "https://images.cdn-files-a.com/uploads/6918488/2000_65c646aa59e06.jpg",
     header: "המשורר הלאומי",
@@ -38,7 +24,7 @@ export const aristsData = [
     bgColor: "bg-cyan-50 ",
   },
   {
-    name: "poliker",
+    name: "פוליקר",
     picture:
       "https://images.cdn-files-a.com/uploads/6918488/2000_65c646aa59e06.jpg",
     header: "אני אלקו, סתם ילד יווני",

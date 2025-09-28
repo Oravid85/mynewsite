@@ -2,32 +2,32 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import { LecturePage } from "./components/LecturePage";
-import { aristsData } from "./artistdata";
-
+import { LecturePage } from "../components/LecturePage";
+import { artistsData } from "./artistdata";
+import { aboutMe } from "./aboutme";
+import { AboutMe } from "../components/AboutMe";
+import { Footer } from "../components/Footer";
+import { Header } from "../components/Header";
 export function App() {
   const [currentlecture, setcurrentlecture] = useState("aris-san");
   console.log(currentlecture);
   return (
-    <div>
-      {aristsData.map((artist) => {
-        return (
-          <button
-            className="p-4 bg-amber-200 rounded-2xl mx-4"
-            key={artist.name}
-            onClick={() => {
-              setcurrentlecture(artist);
-            }}
-          >
-            {artist.name}
-          </button>
-        );
-      })}
+    <>
+      <Header
+        artistsData={artistsData}
+        aboutMe={aboutMe}
+        setcurrentlecture={setcurrentlecture}
+        currentlecture={currentlecture}
+      />
 
-      <br />
-      <br />
-      <LecturePage lectureData={currentlecture} />
-    </div>
+      {currentlecture === aboutMe ? (
+        <AboutMe aboutMe={currentlecture} />
+      ) : (
+        <LecturePage lectureData={currentlecture} />
+      )}
+
+      <Footer />
+    </>
   );
 }
 
