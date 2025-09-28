@@ -1,13 +1,13 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import viteLogo from "../public/vite.svg";
 import "./App.css";
-import { LecturePage } from "../components/LecturePage";
+import { LecturePage } from "./components/LecturePage";
 import { artistsData } from "./artistdata";
 import { aboutMe } from "./aboutme";
-import { AboutMe } from "../components/AboutMe";
-import { Footer } from "../components/Footer";
-import { Header } from "../components/Header";
+import { AboutMe } from "./components/AboutMe";
+import { Footer } from "./components/Footer";
+import { Header } from "./components/Header";
 export function App() {
   const [currentlecture, setcurrentlecture] = useState("aris-san");
   console.log(currentlecture);

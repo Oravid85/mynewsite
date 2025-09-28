@@ -1,4 +1,4 @@
-import { aboutMe } from "../src/aboutme";
+import { aboutMe } from "/src/aboutme";
 
 export function AboutMe(props) {
   const MyData = props.aboutMe;

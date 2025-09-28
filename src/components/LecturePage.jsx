@@ -1,4 +1,4 @@
-import { artistsData } from "../src/artistdata";
+import { artistsData } from "/src/artistdata";
 
 export function LecturePage(props) {
   const lectureData = props.lectureData;
