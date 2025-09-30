@@ -7,7 +7,9 @@ export function LecturePage(props) {
   return (
     <div className={lectureData.bgColor}>
       <div className="mb-80">
-        <h1 className="font-bold text-4xl">{lectureData.header}</h1>
+        <h1 className="flex font-semibold text-4xl mt-6">
+          {lectureData.header}
+        </h1>
         <br />
 
         <img
