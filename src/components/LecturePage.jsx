@@ -5,34 +5,34 @@ export function LecturePage(props) {
   console.log(lectureData);
 
   return (
-    <div className={lectureData.bgColor}>
-      <div className="mb-80">
-        <h1 className="flex font-semibold text-4xl mt-6">
-          {lectureData.header}
-        </h1>
-        <br />
+    <div className={`${lectureData.bgColor} min-h-screen`}>
+      <h1 className="flex font-semibold text-3xl mt-6 mb-2 font-assistant  text-amber-800">
+        {lectureData.header}
+      </h1>
 
+      <div className="flex flex-row-reverse space-x-8 mt-20">
         <img
-          dir="ltr"
-          className="w-3/8 h-auto float-left m-4 mr-10"
+          className="w-115 h-auto m-4 mr-10 mb-10"
           src={lectureData.picture}
         />
+        <div className="flex-col ">
+          <h2 className="text-right font-bold text-2xl m-4 font-noto text-amber-700">
+            על האומן
+          </h2>
 
-        <br />
-        <h2 className="text-right font-bold text-2xl m-4">על האומן</h2>
+          <p className="text-justify leading-relaxed whitespace-pre-wrap m-4 mb-10 font-alef text-base text-gray-800">
+            {lectureData.onartist}
+          </p>
 
-        <p className="text-justify leading-relaxed whitespace-pre-wrap m-4">
-          {lectureData.onartist}
-        </p>
-        <br />
-        <br />
-        <h2 className="text-right font-bold text-2xl m-4">על ההרצאה</h2>
+          <h2 className="text-right font-bold text-2xl m-4 font-noto text-amber-700">
+            על ההרצאה
+          </h2>
 
-        <p className="text-justify leading-relaxed whitespace-pre-wrap m-4">
-          {lectureData.onlecture}
-        </p>
+          <p className="text-justify leading-relaxed whitespace-pre-wrap m-4 font-alef text-base text-gray-800">
+            {lectureData.onlecture}
+          </p>
+        </div>
       </div>
-      <br />
     </div>
   );
 }

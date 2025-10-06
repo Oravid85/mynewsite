@@ -3,7 +3,7 @@ import { FaWhatsapp, FaEnvelope } from "react-icons/fa";
 export function Footer(props) {
   return (
     <footer className="bg-amber-100 px-8 py-6 border-t-5 border-amber-600 ">
-      <h3 className="text-right text-3xl font-semibold text-amber-900 mb-4 mt-2 ">
+      <h3 className="text-right font-semibold mb-4 mt-2 flex  text-3xl font-assistant  text-amber-800 ">
         לפרטים נוספים
       </h3>
 
