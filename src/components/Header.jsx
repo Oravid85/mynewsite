@@ -28,11 +28,22 @@ export function Header(props) {
       </div>
 
       <div className="flex items-start space-x-2">
+        <button
+          className="px-5 py-2 border-2 border-amber-700 bg-amber-600 rounded-sm shadow  p-2  hover:bg-amber-700 font-heebo text-base text-white  hover:scale-105 hover:font-bold transition-all duration-200"
+          key="greeting"
+          onClick={() => props.setmainview("Greeting")}
+        >
+          מסך הבית
+        </button>
+
         {props.artistsData.map((artist) => (
           <button
             className="px-5 py-2 border-2 border-amber-700 bg-amber-600 rounded-sm shadow  p-2  hover:bg-amber-700 font-heebo text-base text-white  hover:scale-105 hover:font-bold transition-all duration-200"
             key={artist.name}
-            onClick={() => props.setcurrentlecture(artist)}
+            onClick={() => {
+              props.setcurrentlecture(artist);
+              props.setmainview("LecturePage");
+            }}
           >
             {artist.name}
           </button>
@@ -41,7 +52,7 @@ export function Header(props) {
         <button
           className="px-5 py-2 border-2 border-amber-700 bg-amber-600 rounded-sm shadow  p-2  hover:bg-amber-700 font-heebo text-base text-white  hover:scale-105 hover:font-bold transition-all duration-200"
           key="aboutMe"
-          onClick={() => props.setcurrentlecture(props.aboutMe)}
+          onClick={() => props.setmainview("AboutMe")}
         >
           {props.aboutMe.name}
         </button>

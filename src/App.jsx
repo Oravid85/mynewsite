@@ -12,10 +12,14 @@ import FontClass from "./components/FontClass";
 import { artistsData } from "./artistdata";
 import { aboutMe } from "./aboutme";
 import MyEmojies from "./components/Emojies";
+import { Greeting } from "./components/greeting.jsx";
 
 export function App() {
   const [currentlecture, setcurrentlecture] = useState("aris-san");
   console.log(currentlecture);
+
+  const [mainview, setmainview] = useState("Greeting");
+  console.log(mainview);
 
   return (
     <>
@@ -23,14 +27,20 @@ export function App() {
         artistsData={artistsData}
         aboutMe={aboutMe}
         setcurrentlecture={setcurrentlecture}
+        setmainview={setmainview}
         currentlecture={currentlecture}
       />
 
       {/* <FontClass /> */}
 
-      {currentlecture === aboutMe ? (
-        <AboutMe />
-      ) : (
+      {mainview === "Greeting" && (
+        <Greeting
+          setcurrentlecture={setcurrentlecture}
+          setmainview={setmainview}
+        />
+      )}
+      {mainview === "AboutMe" && <AboutMe />}
+      {mainview === "LecturePage" && (
         <LecturePage lectureData={currentlecture} />
       )}
 
