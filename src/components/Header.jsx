@@ -1,12 +1,16 @@
-import { FaWhatsapp, FaEnvelope } from "react-icons/fa";
+import { useState } from "react";
+import { FaWhatsapp, FaEnvelope, FaBars } from "react-icons/fa";
+import { artistsData } from "../artistdata";
 
 export function Header(props) {
+  const [IsMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <header className="bg-amber-100 px-8 py-4 border-b-4 border-amber-600 flex flex-col space-y-1">
-      <div className="flex justify-between items-start w-full ">
+    <header className="bg-amber-100 px-2 py-4 border-b-4 border-amber-600 flex flex-col space-y-1 md:px-8">
+      <div className="text-center md:flex justify-between items-start w-full ">
         <h1 className="font-heebo text-4xl text-amber-900 ml-auto">שם האתר</h1>
 
-        <div className="flex flex-col space-y-2 mr-auto">
+        <div className="hidden md:flex flex-col space-y-2 mr-auto">
           <a
             href="https://wa.me/+972546738697"
             target="_blank"
@@ -26,10 +30,52 @@ export function Header(props) {
           </a>
         </div>
       </div>
-
-      <div className="flex items-start space-x-2">
+      <div>
         <button
-          className="px-5 py-2 border-2 border-amber-700 bg-amber-600 rounded-sm shadow  p-2  hover:bg-amber-700 font-heebo text-base text-white  hover:scale-105 hover:font-bold transition-all duration-200"
+          className="md:hidden py-2 px-2  border-2 border-amber-700 bg-amber-100 rounded-sm shadow  p-2  hover: font-heebo text-base text-amber-700  hover:scale-105 hover:font-bold transition-all duration-200"
+          key="המבורגר"
+          onClick={() => setIsMenuOpen(!IsMenuOpen)}
+        >
+          <FaBars />
+        </button>
+        {IsMenuOpen && (
+          <div
+            className="flex flex-col space-y-2 items-start border-2 border-amber-700 bg-amber-100 shadow p-2 font-heebo text-base text-amber-600 md:hidden 
+        fixed top-23 right-2 z-50 w-56 text-right"
+          >
+            <button
+              onClick={() => props.setmainview("Greeting")}
+              className=" block w-full border-b-2 border-amber-600 py-2 px-3 text-right"
+            >
+              מסך הבית
+            </button>
+
+            {props.artistsData.map((artist) => (
+              <button
+                className=" block w-full border-b-2 border-amber-600 py-1 px-3 text-right"
+                key={artist.name}
+                onClick={() => {
+                  props.setcurrentlecture(artist);
+                  props.setmainview("LecturePage");
+                }}
+              >
+                {artist.name}
+              </button>
+            ))}
+
+            <button
+              onClick={() => props.setmainview("AboutMe")}
+              className=" block w-full border-b-0 border-amber-600 py-1 px-3 text-right"
+            >
+              {" "}
+              עלי{" "}
+            </button>
+          </div>
+        )}
+      </div>
+      <div className="hidden md:flex flex-row space-x-2 items-start">
+        <button
+          className="py-1 px-5  border-2 border-amber-700 bg-amber-600 rounded-sm shadow  p-2  hover:bg-amber-700 font-heebo text-base text-white  hover:scale-105 hover:font-bold transition-all duration-200 md:py-2"
           key="greeting"
           onClick={() => props.setmainview("Greeting")}
         >
@@ -38,7 +84,7 @@ export function Header(props) {
 
         {props.artistsData.map((artist) => (
           <button
-            className="px-5 py-2 border-2 border-amber-700 bg-amber-600 rounded-sm shadow  p-2  hover:bg-amber-700 font-heebo text-base text-white  hover:scale-105 hover:font-bold transition-all duration-200"
+            className="hidden md:flex px-5 py-2 border-2 border-amber-700 bg-amber-600 rounded-sm shadow p-2  hover:bg-amber-700 font-heebo text-base text-white hover:scale-105 hover:font-bold transition-all duration-200"
             key={artist.name}
             onClick={() => {
               props.setcurrentlecture(artist);
@@ -48,9 +94,8 @@ export function Header(props) {
             {artist.name}
           </button>
         ))}
-
         <button
-          className="px-5 py-2 border-2 border-amber-700 bg-amber-600 rounded-sm shadow  p-2  hover:bg-amber-700 font-heebo text-base text-white  hover:scale-105 hover:font-bold transition-all duration-200"
+          className="hidden md:flex px-5 py-2 border-2 border-amber-700 bg-amber-600 rounded-sm shadow  p-2  hover:bg-amber-700 font-heebo text-base text-white  hover:scale-105 hover:font-bold transition-all duration-200"
           key="aboutMe"
           onClick={() => props.setmainview("AboutMe")}
         >

@@ -44,11 +44,13 @@ export function App() {
         <LecturePage lectureData={currentlecture} />
       )}
 
-      <ContactForm />
+      <ContactForm
+        lectureData={currentlecture}
+        aboutMe={aboutMe}
+        mainview={mainview}
+      />
 
       <Footer />
     </>
   );
 }
-
-//<div className="bg-amber-700 opacity-25" ></div>

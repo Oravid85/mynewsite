@@ -40,9 +40,12 @@ export function Greeting({ setcurrentlecture, setmainview }) {
                 {lecture.name}
               </h2>
 
-              <div className="flex flex-row-reverse">
-                <img className="w-[20%] h-auto" src={lecture.picture} />
-                <p className="ml-100 text-justify leading-relaxed whitespace-pre-wrap m-4 mb-10 font-alef text-base text-gray-800">
+              <div className="flex flex-col-reverse md:flex-row-reverse">
+                <img
+                  className="w-4/5 mx-auto md:w-[20%] h-auto"
+                  src={lecture.picture}
+                />
+                <p className="md:ml-100 text-justify leading-relaxed whitespace-pre-wrap m-4 mb-10 font-alef text-base text-gray-800">
                   {lecture.onlecture.split(" ").slice(0, 12).join(" ")}...
                 </p>
               </div>
