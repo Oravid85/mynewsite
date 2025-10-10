@@ -5,10 +5,21 @@ import { artistsData } from "../artistdata";
 export function Header(props) {
   const [IsMenuOpen, setIsMenuOpen] = useState(false);
 
+  const handleMenuClick = (callback) => {
+    setIsMenuOpen(false);
+    callback();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <header className="bg-amber-100 px-2 py-4 border-b-4 border-amber-600 flex flex-col space-y-1 md:px-8">
       <div className="text-center md:flex justify-between items-start w-full ">
-        <h1 className="font-heebo text-4xl text-amber-900 ml-auto">שם האתר</h1>
+        <h1 className="font-heebo text-4xl text-amber-900 ml-auto">
+          אור אביד | הרצאות{" "}
+        </h1>
 
         <div className="hidden md:flex flex-col space-y-2 mr-auto">
           <a
@@ -38,40 +49,44 @@ export function Header(props) {
         >
           <FaBars />
         </button>
-        {IsMenuOpen && (
-          <div
-            className="flex flex-col space-y-2 items-start border-2 border-amber-700 bg-amber-100 shadow p-2 font-heebo text-base text-amber-600 md:hidden 
-        fixed top-23 right-2 z-50 w-56 text-right"
+        <div
+          className={`absolute right-2 left-2 z-50 flex flex-col  w-2/5 space-y-2 items-start border-2 border-amber-700 bg-amber-100 shadow p-2 font-heebo text-base text-amber-600 md:hidden
+        transform origin-top transition-all duration-300 ease-in-out
+  ${
+    IsMenuOpen
+      ? "scale-y-100 opacity-100"
+      : "scale-y-0 opacity-0 pointer-events-none"
+  }`}
+        >
+          <button
+            onClick={() => handleMenuClick(() => props.setmainview("Greeting"))}
+            className="block w-full border-b-2 border-amber-600 py-2 px-3 text-right"
           >
-            <button
-              onClick={() => props.setmainview("Greeting")}
-              className=" block w-full border-b-2 border-amber-600 py-2 px-3 text-right"
-            >
-              מסך הבית
-            </button>
+            מסך הבית
+          </button>
 
-            {props.artistsData.map((artist) => (
-              <button
-                className=" block w-full border-b-2 border-amber-600 py-1 px-3 text-right"
-                key={artist.name}
-                onClick={() => {
+          {props.artistsData.map((artist) => (
+            <button
+              className="block w-full border-b-2 border-amber-600 py-1 px-3 text-right"
+              key={artist.name}
+              onClick={() =>
+                handleMenuClick(() => {
                   props.setcurrentlecture(artist);
                   props.setmainview("LecturePage");
-                }}
-              >
-                {artist.name}
-              </button>
-            ))}
-
-            <button
-              onClick={() => props.setmainview("AboutMe")}
-              className=" block w-full border-b-0 border-amber-600 py-1 px-3 text-right"
+                })
+              }
             >
-              {" "}
-              עלי{" "}
+              {artist.name}
             </button>
-          </div>
-        )}
+          ))}
+
+          <button
+            onClick={() => handleMenuClick(() => props.setmainview("AboutMe"))}
+            className="block w-full border-b-0 border-amber-600 py-1 px-3 text-right"
+          >
+            עלי
+          </button>
+        </div>
       </div>
       <div className="hidden md:flex flex-row space-x-2 items-start">
         <button
