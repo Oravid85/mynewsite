@@ -6,4 +6,22 @@ body,
   margin: 0;
   padding: 0;
   height: 100%;
+  width: 100%;
+}
+
+/* קלאסים מותאמים לפונטים */
+.font-heebo {
+  font-family: "Heebo", sans-serif;
+}
+.font-alef {
+  font-family: "Alef", sans-serif;
+}
+.font-assistant {
+  font-family: "Assistant", sans-serif;
+}
+.font-rubik {
+  font-family: "Rubik", sans-serif;
+}
+.font-noto {
+  font-family: "Noto Sans Hebrew", sans-serif;
 }
