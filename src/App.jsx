@@ -16,7 +16,7 @@ import { Greeting } from "./components/greeting.jsx";
 
 export function App() {
   const [currentlecture, setcurrentlecture] = useState("aris-san");
-  console.log(currentlecture);
+  // console.log(currentlecture);
 
   const [mainview, setmainview] = useState("Greeting");
   console.log(mainview);

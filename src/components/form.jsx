@@ -16,7 +16,7 @@ export default function ContactForm({ lectureData, aboutMe, mainview }) {
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
-    console.log({ name, Email, TelNum });
+    // console.log({ name, Email, TelNum });
     alert("הטופס נשלח!");
   };
 
