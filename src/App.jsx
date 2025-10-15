@@ -12,7 +12,7 @@ import FontClass from "./components/FontClass";
 import { artistsData } from "./artistdata";
 import { aboutMe } from "./aboutme";
 import MyEmojies from "./components/Emojies";
-import { Greeting } from "./components/greeting.jsx";
+import { Greeting } from "./components/Greeting.jsx";
 
 export function App() {
   const [currentlecture, setcurrentlecture] = useState("aris-san");
