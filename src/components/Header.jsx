@@ -5,7 +5,7 @@ import { artistsData } from "../artistdata";
 export function Header(props) {
   const [IsMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleMenuClick = (currentlecture, mainview) => {
+  const handleMobileMenuClick = (mainview, currentlecture) => {
     setIsMenuOpen(false);
     props.setcurrentlecture(currentlecture);
     props.setmainview(mainview);
@@ -60,7 +60,9 @@ export function Header(props) {
   }`}
         >
           <button
-            onClick={() => handleMenuClick(() => props.setmainview("Greeting"))}
+            onClick={() =>
+              handleMobileMenuClick(() => props.setmainview("Greeting"))
+            }
             className="block w-full border-b-2 border-amber-600 py-2 px-3 text-right"
           >
             מסך הבית
@@ -70,14 +72,14 @@ export function Header(props) {
             <button
               className="block w-full border-b-2 border-amber-600 py-1 px-3 text-right"
               key={artist.name}
-              onClick={() => handleMenuClick("LecturePage", artist)}
+              onClick={() => handleMobileMenuClick("LecturePage", artist)}
             >
               {artist.name}
             </button>
           ))}
 
           <button
-            onClick={() => handleMenuClick("AboutMe")}
+            onClick={() => handleMobileMenuClick("AboutMe")}
             className="block w-full border-b-0 border-amber-600 py-1 px-3 text-right"
           >
             עלי
@@ -88,7 +90,7 @@ export function Header(props) {
         <button
           className="py-1 px-5  border-2 border-amber-700 bg-amber-600 rounded-sm shadow  p-2  hover:bg-amber-700 font-heebo text-base text-white  hover:scale-105 hover:font-bold transition-all duration-200 md:py-2"
           key="greeting"
-          onClick={() => handleMenuClick("Greeting")}
+          onClick={() => handleMobileMenuClick("Greeting")}
         >
           מסך הבית
         </button>
