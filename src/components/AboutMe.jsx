@@ -2,7 +2,7 @@ import { aboutMe } from "/src/aboutme";
 
 export function AboutMe(props) {
   const MyData = props.aboutMe;
-  console.log(MyData);
+  // console.log(MyData);
 
   return (
     <div className={`${aboutMe.bgColor} min-h-screen`}>

@@ -2,7 +2,7 @@ import { artistsData } from "/src/artistdata";
 
 export function LecturePage(props) {
   const lectureData = props.lectureData;
-  console.log(lectureData);
+  // console.log(lectureData);
 
   return (
     <div className={`${lectureData.bgColor} min-h-screen`}>
