@@ -39,9 +39,11 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: check files
-      - run: | 
-            cd ./dist 
-            ls  
+        if: always()
+        shell: bash
+        run: |
+          echo "Checking current directory"
+          ls -la 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
