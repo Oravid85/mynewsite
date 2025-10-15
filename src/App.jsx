@@ -8,13 +8,14 @@ import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import ContactForm from "./components/form.jsx";
 import FontClass from "./components/FontClass";
+import { FormspreeProvider } from "@formspree/react";
 
 import { artistsData } from "./artistdata";
 import { aboutMe } from "./aboutme";
 import MyEmojies from "./components/Emojies";
 import { Greeting } from "./components/greeting.jsx";
 
-export function App() {
+export function App({ Component, pageProps }) {
   const [currentlecture, setcurrentlecture] = useState("aris-san");
   // console.log(currentlecture);
 
