@@ -15,7 +15,7 @@ import { aboutMe } from "./aboutme";
 import MyEmojies from "./components/Emojies";
 import { Greeting } from "./components/greeting.jsx";
 
-export function App({ Component, pageProps }) {
+export function App() {
   const [currentlecture, setcurrentlecture] = useState("aris-san");
   // console.log(currentlecture);
 
