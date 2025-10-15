@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { aboutMe } from "../aboutme";
-import { AboutMe } from "./AboutMe";
 
 export default function ContactForm({ lectureData, aboutMe, mainview }) {
   const bgcolor =
@@ -14,17 +12,44 @@ export default function ContactForm({ lectureData, aboutMe, mainview }) {
   const [Email, setEmail] = useState("");
   const [TelNum, setTelNum] = useState("");
 
-  const handleSubmit = (ev) => {
+  const handleSubmit = async (ev) => {
     ev.preventDefault();
-    // console.log({ name, Email, TelNum });
-    alert("הטופס נשלח!");
+
+    try {
+      const response = await fetch("https://formspree.io/f/mdkwylbb", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email: Email,
+          message: `טלפון: ${TelNum}`,
+          replyto: Email, // עוזר ל-Formspree לזהות את שולח ההודעה
+        }),
+      });
+
+      if (response.ok) {
+        alert("הטופס נשלח בהצלחה!");
+        setTimeout(() => {
+          setName("");
+          setEmail("");
+          setTelNum("");
+        }, 3000);
+      } else {
+        console.log("Form submission failed");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
   };
 
   return (
     <div className={`${bgcolor} w-full flex justify-center`}>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col items-center space-y-4 w-[90%] max-w-sm bg-amber-100 px-6 py-6 rounded-2xl shadow-lg mb-6 md:mr-auto md:w-[400px] "
+        className="flex flex-col items-center space-y-4 w-[90%] max-w-sm bg-amber-100 px-6 py-6 rounded-2xl shadow-lg mb-6 md:mr-auto md:w-[400px]"
       >
         <h2 className="text-center text-2xl font-noto font-semibold text-amber-700">
           השאירו פרטים ואחזור אליכם בהקדם!
@@ -36,6 +61,7 @@ export default function ContactForm({ lectureData, aboutMe, mainview }) {
           value={name}
           onChange={(ev) => setName(ev.target.value)}
           className="bg-gray-200 border-2 border-amber-700 p-2 rounded-2xl text-center"
+          required
         />
         <input
           type="email"
@@ -43,6 +69,7 @@ export default function ContactForm({ lectureData, aboutMe, mainview }) {
           value={Email}
           onChange={(ev) => setEmail(ev.target.value)}
           className="bg-gray-200 border-2 border-amber-700 p-2 rounded-2xl text-center"
+          required
         />
         <input
           type="tel"
