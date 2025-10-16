@@ -9,8 +9,8 @@ export default function ContactForm({ lectureData, aboutMe, mainview }) {
       : lectureData.bgColor;
 
   const [name, setName] = useState("");
-  const [Email, setEmail] = useState("");
-  const [TelNum, setTelNum] = useState("");
+  const [email, setEmail] = useState("");
+  const [telNum, setTelNum] = useState("");
 
   const handleSubmit = async (ev) => {
     ev.preventDefault();
@@ -24,9 +24,9 @@ export default function ContactForm({ lectureData, aboutMe, mainview }) {
         },
         body: JSON.stringify({
           name,
-          email: Email,
-          message: `טלפון: ${TelNum}`,
-          replyto: Email, // עוזר ל-Formspree לזהות את שולח ההודעה
+          email: email,
+          message: `טלפון: ${telNum}`,
+          replyto: email, // עוזר ל-Formspree לזהות את שולח ההודעה
         }),
       });
 
@@ -36,7 +36,7 @@ export default function ContactForm({ lectureData, aboutMe, mainview }) {
           setName("");
           setEmail("");
           setTelNum("");
-        }, 3000);
+        }, 1500);
       } else {
         console.log("Form submission failed");
       }
@@ -66,7 +66,7 @@ export default function ContactForm({ lectureData, aboutMe, mainview }) {
         <input
           type="email"
           placeholder='דוא"ל'
-          value={Email}
+          value={email}
           onChange={(ev) => setEmail(ev.target.value)}
           className="bg-gray-200 border-2 border-amber-700 p-2 rounded-2xl text-center"
           required
@@ -74,7 +74,7 @@ export default function ContactForm({ lectureData, aboutMe, mainview }) {
         <input
           type="tel"
           placeholder="מספר טלפון"
-          value={TelNum}
+          value={telNum}
           onChange={(ev) => setTelNum(ev.target.value)}
           className="bg-gray-200 border-2 border-amber-700 p-2 rounded-2xl text-center"
         />

@@ -1,3 +1,4 @@
+import RecommendationCarousel from "./RecommendationCarousel";
 import { aboutMe } from "/src/aboutme";
 
 export function AboutMe(props) {
@@ -28,9 +29,13 @@ export function AboutMe(props) {
             ממליצים
           </h2>
 
-          <p className="text-justify leading-relaxed whitespace-pre-wrap m-4 font-alef text-base text-gray-800">
+          <div className="flex-col md:flex-1 md:min-h-[150px] md:h-auto m-4">
+            <RecommendationCarousel recommendations={aboutMe.recommendations} />
+          </div>
+
+          {/* <p className="text-justify leading-relaxed whitespace-pre-wrap m-4 font-alef text-base text-gray-800">
             {aboutMe.recomendations}
-          </p>
+          </p> */}
         </div>
       </div>
     </div>
