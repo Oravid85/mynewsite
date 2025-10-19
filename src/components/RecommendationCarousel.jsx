@@ -18,14 +18,21 @@ export default function RecommendationCarousel({ recommendations }) {
         640: { slidesPerView: 1 },
         1024: { slidesPerView: 1 },
       }}
+      className="w-full h-44"
     >
       {recommendations.map((rec, index) => (
         <SwiperSlide
           key={index}
-          className=" h-auto flex flex-col justify-start"
+          className="bg-amber-500 flex flex-col justify-start "
         >
-          <p className="text-base text-gray-800">{rec.text}</p>
-          <p className="text-sm text-gray-600">{rec.author}</p>
+          <div className="px-8 h-full flex flex-col justify-center gap-3">
+            <p className=" text-center bg-red-600 text-base text-gray-800 pt-2">
+              {rec.text}
+            </p>
+            <p className=" flex justify-end bg-fuchsia-500 text-sm text-gray-600pt-1">
+              {rec.author}
+            </p>
+          </div>
         </SwiperSlide>
       ))}
     </Swiper>
