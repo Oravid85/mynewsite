@@ -52,37 +52,6 @@ export function App() {
         mainview={mainview}
       />
 
-      <section className="p-1 my-8 w-[500px]  flex  bg-amber-800 ">
-        <div className={`${aboutMe.bgColor} `}>
-          {/* <h1 className="justify-start flex font-semibold text-3xl mt-6 mb-2 font-assistant  text-amber-800 mr-2">
-            {aboutMe.header}
-          </h1>
-          <div className="flex-col ">
-            <h2 className="text-right font-bold text-2xl m-4 font-noto text-amber-700">
-              עלי
-            </h2> */}
-
-          {/* <p className="text-justify leading-relaxed whitespace-pre-wrap m-4 mb-10 font-alef text-base text-gray-800">
-              {aboutMe.onartist}
-            </p>
-            <div className="w-1/2 flex flex-col justify-center items-center">
-              <h2 className="text-right font-bold text-2xl m-4 font-noto text-amber-700">
-                ממליצים
-              </h2> */}
-          <div className="w-[500px] flex justify-center">
-            <RecommendationCarousel recommendations={aboutMe.recommendations} />
-          </div>
-        </div>
-        {/* </div>
-        </div> */}
-        {/* <div className="w-fit flex items-center bg-gray-200">
-          <img
-            className="w-[80%] h-[80%] md:w-120 md:h-auto m-4 mr-10 mb-10"
-            src={aboutMe.picture}
-          />
-        </div> */}
-      </section>
-
       <Footer />
     </>
   );

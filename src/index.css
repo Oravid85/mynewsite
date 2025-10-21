@@ -25,3 +25,39 @@ body,
 .font-noto {
   font-family: "Noto Sans Hebrew", sans-serif;
 }
+
+@layer components {
+  /* חצים */
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: auto !important;
+    bottom: 0 !important;
+    color: #b45309 !important;
+
+    /* צבע חום-ענברי */
+  }
+
+  /* הנקודות */
+  .swiper-pagination {
+    position: relative !important;
+    bottom: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 0.5rem !important;
+  }
+  /* צבע הנקודות הרגילות */
+  .swiper-pagination-bullet {
+    background-color: #b45309 !important; /* אותו amber כמו החצים */
+    opacity: 0.4 !important;
+  }
+
+  /* צבע הנקודה הפעילה */
+  .swiper-pagination-bullet-active {
+    background-color: #b45309 !important;
+    opacity: 1 !important;
+  }
+  /* קצת רווח למטה בשביל שנראה הכול */
+  .swiper {
+    padding-bottom: 3rem !important;
+  }
+}

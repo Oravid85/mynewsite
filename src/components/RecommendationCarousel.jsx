@@ -21,10 +21,7 @@ export default function RecommendationCarousel({ recommendations }) {
       className="w-full h-44"
     >
       {recommendations.map((rec, index) => (
-        <SwiperSlide
-          key={index}
-          className="bg-amber-500 flex flex-col justify-start "
-        >
+        <SwiperSlide key={index} className="flex flex-col justify-start ">
           <div className="px-8 h-full flex flex-col justify-center gap-3">
             <p className=" text-center bg-red-600 text-base text-gray-800 pt-2">
               {rec.text}
