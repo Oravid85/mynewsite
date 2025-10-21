@@ -7,13 +7,13 @@ export function AboutMe(props) {
 
   return (
     <div className={`${aboutMe.bgColor} min-h-screen px-4`}>
-      <h1 className="flex font-semibold text-3xl mt-6 mb-2 font-assistant  text-amber-800 mr-2">
+      <h1 className="flex font-semibold text-3xl mt-6 mb-2 mr-2 font-assistant  text-amber-800 ">
         {aboutMe.header}
       </h1>
 
-      <div className="flex flex-col-reverse md:flex-row-reverse md:space-x-8 md:mt-20">
+      <div className="flex flex-col-reverse md:flex-row-reverse md:space-x-8 md:mt-10">
         <img
-          className="w-[80%] h-[80%] md:w-[450px] md:h-auto m-4 mr-10 mb-10"
+          className="w-[80%] h-[80%] md:w-[450px] md:h-[450px] m-4 mr-10 mb-10"
           src={aboutMe.picture}
         />
         <div className="flex-col ">
@@ -21,13 +21,14 @@ export function AboutMe(props) {
             עלי
           </h2>
 
-          <p className="text-justify leading-relaxed whitespace-pre-wrap m-4 mb-10 font-alef text-base text-gray-800">
+          <p className="text-justify leading-relaxed whitespace-pre-wrap m-4 mb-10 font-alef  text-xl md:text-lg  text-gray-800">
             {aboutMe.onartist}
           </p>
 
           <h2 className="text-right font-bold text-2xl m-4 font-noto text-amber-700">
             ממליצים
           </h2>
+          <RecomCar items={aboutMe.recommendations} />
 
           {/* <div className="w-full md:w-[500px] flex justify-center">
             <RecommendationCarousel recommendations={aboutMe.recommendations} />

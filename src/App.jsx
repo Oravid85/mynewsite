@@ -52,7 +52,6 @@ export function App() {
         aboutMe={aboutMe}
         mainview={mainview}
       />
-      <RecomCar items={aboutMe.recommendations} />
 
       <Footer />
     </>
