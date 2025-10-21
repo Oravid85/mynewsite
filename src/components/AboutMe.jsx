@@ -1,9 +1,9 @@
 import RecommendationCarousel from "./RecommendationCarousel";
 import { aboutMe } from "/src/aboutme";
+import RecomCar from "./RecomCar";
 
 export function AboutMe(props) {
   const MyData = props.aboutMe;
-  // console.log(MyData);
 
   return (
     <div className={`${aboutMe.bgColor} min-h-screen px-4`}>
@@ -29,9 +29,9 @@ export function AboutMe(props) {
             ממליצים
           </h2>
 
-          <div className="w-full md:w-[500px] flex justify-center">
+          {/* <div className="w-full md:w-[500px] flex justify-center">
             <RecommendationCarousel recommendations={aboutMe.recommendations} />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
