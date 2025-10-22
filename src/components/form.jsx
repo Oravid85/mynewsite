@@ -1,6 +1,8 @@
 import { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 export default function ContactForm({ lectureData, aboutMe, mainview }) {
+  const navigate = useNavigate();
+
   const bgcolor =
     mainview === "Greeting"
       ? "bg-white"
@@ -38,10 +40,11 @@ export default function ContactForm({ lectureData, aboutMe, mainview }) {
           setTelNum("");
         }, 1500);
       } else {
-        console.log("Form submission failed");
+        navigate("/404");
       }
     } catch (error) {
       console.error("Error submitting form:", error);
+      navigate("/404");
     }
   };
 
