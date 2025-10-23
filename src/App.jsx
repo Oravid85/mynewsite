@@ -16,10 +16,11 @@ import RecommendationCarousel from "./components/RecommendationCarousel";
 import RecomCar from "./components/RecomCar";
 
 import { artistsData } from "./artistdata";
-import { aboutMe } from "./aboutme";
+import { aboutMe } from "./aboutme.js";
 import { lecturesCom } from "./lecturesrecom";
 
 import NotFoundPage from "./pages/NotFoundPage.jsx";
+import { TestPage } from "./pages/TestPage.jsx";
 
 export function App() {
   const [currentlecture, setcurrentlecture] = useState("אריס סאן");
@@ -62,6 +63,9 @@ export function App() {
 
               {mainview === "LecturePage" && (
                 <RecomCar
+                  lectureData={currentlecture}
+                  aboutMe={aboutMe}
+                  mainview={mainview}
                   items={lecturesCom.filter(
                     (item) => item.artist === currentlecture.name
                   )}
@@ -73,6 +77,7 @@ export function App() {
         }
       />
       <Route path="/404" element={<NotFoundPage />} />
+      <Route path="/test" element={<TestPage />} />
       <Route path="*" element={<Navigate to="/404" replace />} />
     </Routes>
   );

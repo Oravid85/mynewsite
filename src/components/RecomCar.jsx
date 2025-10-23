@@ -1,11 +1,6 @@
 import { useState } from "react";
 
-export default function RecomCar({
-  items,
-  mainview,
-  lectureData = {},
-  aboutMe = {},
-}) {
+export default function RecomCar({ items, mainview, lectureData, aboutMe }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
@@ -18,14 +13,14 @@ export default function RecomCar({
 
   const bgcolor =
     mainview === "Greeting"
-      ? "bg-white"
+      ? "bg-red-500"
       : mainview === "AboutMe"
       ? aboutMe.bgColor
       : lectureData.bgColor;
 
   console.log("bgcolor", bgcolor, lectureData, aboutMe);
   return (
-    <div className={`${bgcolor} w-full flex justify-center mb-4 md:mb-0`}>
+    <div className={`bg-transparent w-full flex justify-center mb-4 md:mb-0`}>
       <div className="flex flex-col relative h-[360px] w-fit max-w-xl mx-4 overflow-hidden rounded-2xl shadow-lg bg-amber-100">
         <div
           className="h-full flex transition-transform duration-500 ease-in-out shadow-lg"
