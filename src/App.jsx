@@ -16,15 +16,15 @@ import RecommendationCarousel from "./components/RecommendationCarousel";
 import RecomCar from "./components/RecomCar";
 
 import { artistsData } from "./artistdata";
-import { aboutMe } from "./aboutme.js";
+import { aboutMe } from "./oravid.js";
 import { lecturesCom } from "./lecturesrecom";
 
 import NotFoundPage from "./pages/NotFoundPage.jsx";
 import { TestPage } from "./pages/TestPage.jsx";
 
 export function App() {
-  const [currentlecture, setcurrentlecture] = useState("אריס סאן");
-  // console.log(currentlecture);
+  const [currentlecture, setcurrentlecture] = useState(null);
+  console.log("🐱", currentlecture);
 
   const [mainview, setmainview] = useState("Greeting");
   // console.log(mainview);

@@ -1,5 +1,5 @@
 import RecommendationCarousel from "./RecommendationCarousel";
-import { aboutMe } from "/src/aboutme";
+import { aboutMe } from "/src/oravid";
 import RecomCar from "./RecomCar";
 
 export function AboutMe(props) {
