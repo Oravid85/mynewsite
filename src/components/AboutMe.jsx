@@ -1,10 +1,6 @@
-import RecommendationCarousel from "./RecommendationCarousel";
-import { aboutMe } from "/src/oravid";
 import RecomCar from "./RecomCar";
 
-export function AboutMe(props) {
-  const MyData = props.aboutMe;
-
+export function AboutMe({ aboutMe }) {
   return (
     <div className={`${aboutMe.bgColor} min-h-screen px-4`}>
       <h1 className="flex font-semibold text-3xl mt-6 mb-2 mr-2 font-assistant  text-amber-800 ">
@@ -29,10 +25,6 @@ export function AboutMe(props) {
             ממליצים
           </h2>
           <RecomCar items={aboutMe.recommendations} />
-
-          {/* <div className="w-full md:w-[500px] flex justify-center">
-            <RecommendationCarousel recommendations={aboutMe.recommendations} />
-          </div> */}
         </div>
       </div>
     </div>

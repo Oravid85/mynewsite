@@ -5,10 +5,10 @@ import { artistsData } from "../artistdata";
 export function Header(props) {
   const [IsMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleMobileMenuClick = (mainview, currentlecture) => {
+  const handleMobileMenuClick = (mainView, currentLecture) => {
     setIsMenuOpen(false);
-    props.setcurrentlecture(currentlecture);
-    props.setmainview(mainview);
+    props.setCurrentLecture(currentLecture);
+    props.setMainView(mainView);
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -61,7 +61,7 @@ export function Header(props) {
         >
           <button
             onClick={() =>
-              handleMobileMenuClick(() => props.setmainview("Greeting"))
+              handleMobileMenuClick(() => props.setMainView("Greeting"))
             }
             className="block w-full border-b-2 border-amber-600 py-2 px-3 text-right"
           >
@@ -100,8 +100,8 @@ export function Header(props) {
             className="hidden md:flex px-5 py-2 border-2 border-amber-700 bg-amber-600 rounded-sm shadow p-2  hover:bg-amber-700 font-heebo text-base text-white hover:scale-105 hover:font-bold transition-all duration-200"
             key={artist.name}
             onClick={() => {
-              props.setcurrentlecture(artist);
-              props.setmainview("LecturePage");
+              props.setCurrentLecture(artist);
+              props.setMainView("LecturePage");
             }}
           >
             {artist.name}
@@ -110,7 +110,7 @@ export function Header(props) {
         <button
           className="hidden md:flex px-5 py-2 border-2 border-amber-700 bg-amber-600 rounded-sm shadow  p-2  hover:bg-amber-700 font-heebo text-base text-white  hover:scale-105 hover:font-bold transition-all duration-200"
           key="aboutMe"
-          onClick={() => props.setmainview("AboutMe")}
+          onClick={() => props.setMainView("AboutMe")}
         >
           {props.aboutMe.name}
         </button>

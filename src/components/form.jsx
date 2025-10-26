@@ -7,8 +7,10 @@ export default function ContactForm({ lectureData, aboutMe, mainview }) {
     mainview === "Greeting"
       ? "bg-white"
       : mainview === "AboutMe"
-      ? aboutMe.bgColor
-      : lectureData.bgColor;
+      ? aboutMe?.bgColor || "bg-white"
+      : mainview === "LecturePage" && lectureData
+      ? lectureData?.bgColor || "bg-white"
+      : "bg-white";
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -34,11 +36,9 @@ export default function ContactForm({ lectureData, aboutMe, mainview }) {
 
       if (response.ok) {
         alert("הטופס נשלח בהצלחה!");
-        setTimeout(() => {
-          setName("");
-          setEmail("");
-          setTelNum("");
-        }, 1500);
+        setName("");
+        setEmail("");
+        setTelNum("");
       } else {
         navigate("/404");
       }

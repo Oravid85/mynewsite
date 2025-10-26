@@ -1,6 +1,11 @@
 import { useState } from "react";
 
-export default function RecomCar({ items, mainview, lectureData, aboutMe }) {
+export default function RecomCar({
+  items,
+  mainview,
+  lectureData = {},
+  aboutMe = {},
+}) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {

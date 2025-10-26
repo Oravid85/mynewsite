@@ -4,8 +4,8 @@ export const TestPage = () => {
   return (
     <div className=" bg-red-400 h-screen w-screen flex justify-center items-center">
       <RecomCar
-        lectureData={"אריס סאן"}
-        aboutMe={aboutMe}
+        lectureData={null}
+        aboutMe={null}
         mainview={"Greeting"}
         items={[
           {

@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "../public/vite.svg";
 import "./App.css";
 
 import { LecturePage } from "./components/LecturePage";
@@ -23,12 +21,12 @@ import NotFoundPage from "./pages/NotFoundPage.jsx";
 import { TestPage } from "./pages/TestPage.jsx";
 
 export function App() {
-  const [currentlecture, setcurrentlecture] = useState(null);
-  console.log("🐱", currentlecture);
+  const [currentLecture, setCurrentLecture] = useState(null);
+  console.log("🐱", currentLecture);
 
-  const [mainview, setmainview] = useState("Greeting");
-  // console.log(mainview);
-  console.log("currentlecture:", currentlecture);
+  const [mainView, setMainView] = useState("Greeting");
+  // console.log(mainView);
+  console.log("currentLecture:", currentLecture);
   return (
     <Routes>
       <Route
@@ -38,36 +36,36 @@ export function App() {
             <Header
               artistsData={artistsData}
               aboutMe={aboutMe}
-              setcurrentlecture={setcurrentlecture}
-              setmainview={setmainview}
-              currentlecture={currentlecture}
+              setCurrentLecture={setCurrentLecture}
+              setMainView={setMainView}
+              currentLecture={currentLecture}
             />
             {/* <FontClass /> */}
-            {mainview === "Greeting" && (
+            {mainView === "Greeting" && (
               <Greeting
-                setcurrentlecture={setcurrentlecture}
-                setmainview={setmainview}
+                setMainView={setMainView}
+                setCurrentLecture={setCurrentLecture}
               />
             )}
-            {mainview === "AboutMe" && <AboutMe />}
-            {mainview === "LecturePage" && (
-              <LecturePage lectureData={currentlecture} />
+            {mainView === "AboutMe" && <AboutMe aboutMe={aboutMe} />}
+            {mainView === "LecturePage" && (
+              <LecturePage lectureData={currentLecture} />
             )}
 
             <div className="flex flex-col md:flex-row-reverse">
               <ContactForm
-                lectureData={currentlecture}
+                lectureData={currentLecture}
                 aboutMe={aboutMe}
-                mainview={mainview}
+                mainView={mainView}
               />
 
-              {mainview === "LecturePage" && (
+              {mainView === "LecturePage" && currentLecture && (
                 <RecomCar
-                  lectureData={currentlecture}
+                  lectureData={currentLecture}
                   aboutMe={aboutMe}
-                  mainview={mainview}
+                  mainView={mainView}
                   items={lecturesCom.filter(
-                    (item) => item.artist === currentlecture.name
+                    (item) => item.artist === currentLecture.name
                   )}
                 />
               )}

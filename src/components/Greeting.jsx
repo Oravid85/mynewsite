@@ -1,6 +1,6 @@
 import { artistsData } from "../artistdata";
 
-export function Greeting({ setcurrentlecture, setmainview }) {
+export function Greeting({ setCurrentLecture, setMainView }) {
   return (
     <div className="bg-white min-h-screen p-4">
       <h1 className="flex font-semibold text-3xl mt-6 mb-2 font-assistant text-amber-800">
@@ -30,8 +30,8 @@ export function Greeting({ setcurrentlecture, setmainview }) {
             key={lecture.name}
             className="border-amber-800 rounded-xl shadow-lg p-4 pt-2 cursor-pointer"
             onClick={() => {
-              setcurrentlecture(lecture);
-              setmainview("LecturePage");
+              setCurrentLecture(lecture);
+              setMainView("LecturePage");
             }}
           >
             {/* תוכן בצד ימין */}
