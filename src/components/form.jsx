@@ -7,9 +7,9 @@ export default function ContactForm({ lectureData, aboutMe, mainview }) {
     mainview === "Greeting"
       ? "bg-white"
       : mainview === "AboutMe"
-      ? aboutMe?.bgColor || "bg-white"
+      ? aboutMe.bgColor
       : mainview === "LecturePage" && lectureData
-      ? lectureData?.bgColor || "bg-white"
+      ? lectureData.bgColor
       : "bg-white";
 
   const [name, setName] = useState("");

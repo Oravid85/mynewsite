@@ -35,8 +35,8 @@ export function Greeting({ setCurrentLecture, setMainView }) {
             }}
           >
             {/* תוכן בצד ימין */}
-            <div className="flex-col">
-              <h2 className="text-right font-bold text-1xl mt-2 mr-4 font-noto text-amber-700">
+            <div className="flex flex-col">
+              <h2 className="text-right font-bold text-xl mt-2 mr-4 font-noto text-amber-700">
                 {lecture.name}
               </h2>
 

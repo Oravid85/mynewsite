@@ -10,7 +10,7 @@ import ContactForm from "./components/form.jsx";
 import FontClass from "./components/FontClass";
 import { FormspreeProvider } from "@formspree/react";
 import { Greeting } from "./components/greeting.jsx";
-import RecommendationCarousel from "./components/RecommendationCarousel";
+
 import RecomCar from "./components/RecomCar";
 
 import { artistsData } from "./artistdata";
