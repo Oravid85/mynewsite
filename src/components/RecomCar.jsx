@@ -18,7 +18,7 @@ export default function RecomCar({
 
   const bgcolor =
     mainview === "Greeting"
-      ? "bg-red-500"
+      ? "bg-white"
       : mainview === "AboutMe"
       ? aboutMe.bgColor
       : lectureData.bgColor;
@@ -28,19 +28,19 @@ export default function RecomCar({
     <div className={`${bgcolor} w-full flex justify-center my-4 md:mb-0`}>
       <div className="flex flex-col relative h-[360px] w-fit max-w-xl mx-4 overflow-hidden rounded-2xl shadow-lg bg-amber-100">
         <div
-          className="h-full flex transition-transform duration-500 ease-in-out shadow-lg"
+          className=" bg-white h-[280px] flex transition-transform duration-500 ease-in-out shadow-xl my-4  "
           style={{ transform: `translateX(+${currentIndex * 100}%)` }}
         >
           {items.map((item, index) => (
             <div
               key={index}
-              className="w-full flex-shrink-0 flex flex-col gap-4 items-center justify-center bg-amber-100 h-64"
+              className="w-full flex-shrink-0 flex flex-col gap-4 items-center justify-center bg-white h-64"
             >
               <p className="text-2xl md:text-xl text-center font-medium text-amber-800 px-4">
                 {item.text}
               </p>
               {item.author && (
-                <p className="text-xl md:text-base flex justify-end mt-2 text-gray-600">
+                <p className="w-full text-xl md:text-base flex justify-end mt-4 text-gray-600">
                   {item.author}
                 </p>
               )}

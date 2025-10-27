@@ -27,6 +27,13 @@ export function App() {
   const [mainView, setMainView] = useState("Greeting");
   // console.log(mainView);
   console.log("currentLecture:", currentLecture);
+
+  const bgcolor =
+    mainView === "Greeting"
+      ? "bg-white"
+      : mainView === "AboutMe"
+      ? aboutMe.bgColor
+      : currentLecture.bgColor;
   return (
     <Routes>
       <Route
@@ -52,7 +59,7 @@ export function App() {
               <LecturePage lectureData={currentLecture} />
             )}
 
-            <div className="flex flex-col md:flex-row-reverse">
+            <div className={`${bgcolor} flex flex-col md:flex-row-reverse`}>
               <ContactForm
                 lectureData={currentLecture}
                 aboutMe={aboutMe}
