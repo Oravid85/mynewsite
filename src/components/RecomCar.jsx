@@ -25,16 +25,16 @@ export default function RecomCar({
 
   console.log("bgcolor", bgcolor, lectureData, aboutMe);
   return (
-    <div className={`${bgcolor} w-full flex justify-center my-4 md:mb-0`}>
-      <div className="flex flex-col relative h-[360px] w-fit max-w-xl mx-4 overflow-hidden rounded-2xl shadow-lg bg-amber-100">
+    <div className={` w-full flex justify-center my-4 md:mb-0 `}>
+      <div className="flex flex-col relative h-[360px] w-full max-w-xl mx-4 overflow-hidden rounded-2xl shadow-lg bg-amber-100 p-4">
         <div
-          className="  h-[280px] flex transition-transform duration-500 ease-in-out my-4  "
-          style={{ transform: `translateX(+${currentIndex * 100}%)` }}
+          className="  h-[280px] flex transition-transform duration-500 ease-in-out gap-4.5  "
+          style={{ transform: `translateX(+${currentIndex * 104}%)` }}
         >
           {items.map((item, index) => (
             <div
               key={index}
-              className="w-full flex-shrink-0 flex flex-col gap-4 items-center justify-center bg-white h-64 shadow-xl"
+              className="flex-shrink-0 flex flex-col w-full items-center justify-center bg-white h-64 rounded-2xl shadow-xl p-2 "
             >
               <p className="text-2xl md:text-xl text-center font-medium text-amber-800 px-4">
                 {item.text}
