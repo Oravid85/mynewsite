@@ -1,8 +1,11 @@
+import Poliker from "./assets/pictures/Poliker.png";
+import Bialik from "./assets/pictures/Bialik.webp";
+import Aris_San from "./assets/pictures/Aris_San.jpg";
+
 export const artistsData = [
   {
     name: "אריס סאן",
-    picture:
-      "https://images.cdn-files-a.com/uploads/6918488/2000_65c646aa59e06.jpg",
+    picture: Aris_San,
     header: "הוא לא היה איש חכם, אין מה לעשות",
     onartist: `אריס סאן, הוא אחד מאבות המוזיקה והתרבות הישראלית וחלוץ המוזיקה הים-תיכונית בארץ.
 מי שהגיע ליפו כנער יווני בן 17 והתחיל לנגן גיטרה במועדונים, והפך לאחת מאושיות התרבות הגדולות ביותר בישראל בשנות ה-60 וה-70, 
@@ -15,8 +18,7 @@ export const artistsData = [
   },
   {
     name: "ביאליק",
-    picture:
-      "https://images.cdn-files-a.com/uploads/6918488/2000_65c646aa59e06.jpg",
+    picture: Bialik,
     header: "לא זכיתי באור מן ההפקר",
     onartist: `אריס סאן, הוא אחד מאבות המוזיקה והתרבות הישראלית וחלוץ המוזיקה הים-תיכונית בארץ.
 מי שהגיע ליפו כנער יווני בן17 והתחיל לנגן גיטרה במועדונים, והפך לאחת מאושיות התרבות הגדולות ביותר בישראל בשנות ה-60 וה-70, 
@@ -29,8 +31,7 @@ export const artistsData = [
   },
   {
     name: "פוליקר",
-    picture:
-      "https://images.cdn-files-a.com/uploads/6918488/2000_65c646aa59e06.jpg",
+    picture: Poliker,
     header: "אני אלקו, סתם ילד יווני",
     onartist: `אריס סאן, הוא אחד מאבות המוזיקה והתרבות הישראלית וחלוץ המוזיקה הים-תיכונית בארץ.
 מי שהגיע ליפו כנער יווני בן17 והתחיל לנגן גיטרה במועדונים, והפך לאחת מאושיות התרבות הגדולות ביותר בישראל בשנות ה-60 וה-70, 

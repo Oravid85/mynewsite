@@ -49,7 +49,7 @@ export default function ContactForm({ lectureData, aboutMe, mainview }) {
   };
 
   return (
-    <div className={`${bgcolor} w-full flex justify-center`}>
+    <div className={`bg-emerald-50  my-4 w-full flex justify-center`}>
       <form
         onSubmit={handleSubmit}
         className="flex flex-col items-center space-y-4 w-[90%] max-w-sm bg-amber-100 px-6 py-6 rounded-2xl shadow-lg mb-6 md:mr-auto md:w-[400px]"

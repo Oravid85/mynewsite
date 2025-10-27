@@ -13,9 +13,9 @@ import { Greeting } from "./components/greeting.jsx";
 
 import RecomCar from "./components/RecomCar";
 
-import { artistsData } from "./artistdata";
+import { artistsData } from "./artistdata.js";
 import { aboutMe } from "./oravid.js";
-import { lecturesCom } from "./lecturesrecom";
+import { lecturesCom } from "./lecturesrecom.js";
 
 import NotFoundPage from "./pages/NotFoundPage.jsx";
 import { TestPage } from "./pages/TestPage.jsx";
