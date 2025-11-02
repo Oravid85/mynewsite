@@ -32,6 +32,10 @@ export function Greeting({ setCurrentLecture, setMainView }) {
             onClick={() => {
               setCurrentLecture(lecture);
               setMainView("LecturePage");
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
             }}
           >
             {/* תוכן בצד ימין */}
