@@ -6,14 +6,14 @@ export default function RecomCar({
   lectureData = {},
   aboutMe = {},
 }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [slide, setSlide] = useState(0);
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % items.length);
+    setSlide(slide === items.length - 1 ? 0 : slide + 1);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev === 0 ? items.length - 1 : prev - 1));
+    setSlide(slide === 0 ? items.length - 1 : slide - 1);
   };
 
   const bgcolor =
@@ -23,13 +23,13 @@ export default function RecomCar({
       ? aboutMe.bgColor
       : lectureData.bgColor;
 
-  console.log("bgcolor", bgcolor, lectureData, aboutMe);
+  // console.log("bgcolor", bgcolor, lectureData, aboutMe);
   return (
     <div className={` w-full flex justify-center my-4 md:mb-0 `}>
       <div className="flex flex-col relative h-[360px] w-full max-w-xl mx-4 overflow-hidden rounded-2xl shadow-lg bg-amber-100 p-4">
         <div
           className="  h-[280px] flex transition-transform duration-500 ease-in-out gap-4.5  "
-          style={{ transform: `translateX(+${currentIndex * 104}%)` }}
+          style={{ transform: `translateX(+${slide * 104}%)` }}
         >
           {items.map((item, index) => (
             <div
@@ -57,7 +57,7 @@ export default function RecomCar({
           <div>
             <span className="mx-1">{items.length}</span>
             <span className="mx-1">/</span>
-            <span className="mx-1">{currentIndex + 1}</span>
+            <span className="mx-1">{slide + 1}</span>
           </div>
           <button
             onClick={nextSlide}
