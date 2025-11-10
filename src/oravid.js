@@ -1,4 +1,4 @@
-import about_Me from "./assets/pictures/About_Me.jpeg";
+import About_Me from "./assets/pictures/About_Me.jpeg";
 
 export const aboutMe = {
   name: "עלי",
