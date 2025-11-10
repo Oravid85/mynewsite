@@ -6,7 +6,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 import { TestPage } from "./pages/TestPage";
 
 import { LecturePage } from "./components/LecturePage";
-import { AboutMe } from "./components/AboutMe.jsxboutMe";
+import { AboutMe } from "./components/AboutMe.jsx";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import ContactForm from "./components/form.jsx";
