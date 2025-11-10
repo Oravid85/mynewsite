@@ -2,15 +2,20 @@ import { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 
+import NotFoundPage from "./pages/NotFoundPage";
+import { TestPage } from "./pages/TestPage";
+
 import { LecturePage } from "./components/LecturePage";
 import { AboutMe } from "./components/aboutMe";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import ContactForm from "./components/form.jsx";
 import FontClass from "./components/FontClass";
+import RecomCar from "./components/RecomCar";
 
+import { lecturesCom } from "./lecturesrecom.js";
 import { artistsData } from "./artistdata";
-import { aboutMe } from "./aboutme";
+import { aboutMe } from "./oravid.js";
 import MyEmojies from "./components/Emojies";
 import { Greeting } from "./components/greeting.jsx";
 
