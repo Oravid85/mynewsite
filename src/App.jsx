@@ -57,7 +57,7 @@ export function App() {
             {mainView === "LecturePage" && (
               <LecturePage lectureData={currentLecture} />
             )}
-            <div className="flex flex-col items-center">
+            <div className="w-full flex flex-col items-center">
               <div
                 className={`${bgcolor}  w-full flex flex-col md:flex-row-reverse`}
               >
