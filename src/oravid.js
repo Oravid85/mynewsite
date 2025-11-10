@@ -2,7 +2,7 @@ import About_Me from "./assets/pictures/About_Me.jpeg";
 
 export const aboutMe = {
   name: "עלי",
-  picture: about_Me,
+  picture: About_Me,
   header: '"רק על עצמי לספר ידעתי..."',
   onartist: `אז מה עשיתי ב-20 השנים האחרונות?
 הדרכתי.
