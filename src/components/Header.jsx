@@ -5,10 +5,10 @@ import { artistsData } from "../artistdata";
 export function Header(props) {
   const [IsMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleMobileMenuClick = (mainview, currentlecture) => {
+  const handleMobileMenuClick = (mainView, currentLecture) => {
     setIsMenuOpen(false);
-    props.setcurrentlecture(currentlecture);
-    props.setmainview(mainview);
+    props.setCurrentLecture(currentLecture);
+    props.setMainView(mainView);
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -27,7 +27,7 @@ export function Header(props) {
             href="https://wa.me/+972546738697"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center text-1xl font-semibold text-amber-900 hover:text-green-700 transition-colors"
+            className="flex items-center text-xl font-semibold text-amber-900 hover:text-green-700 transition-colors"
           >
             <FaWhatsapp className="text-green-500 ml-3 text-2xl" />
             WhatsApp
@@ -35,7 +35,7 @@ export function Header(props) {
 
           <a
             href="mailto:oravid85@gmail.com"
-            className="flex items-center text-1xl font-semibold text-amber-900 hover:text-blue-700 transition-colors"
+            className="flex items-center text-xl font-semibold text-amber-900 hover:text-blue-700 transition-colors"
           >
             <FaEnvelope className="text-blue-500 ml-3 text-2xl" />
             דוא"ל
@@ -44,7 +44,7 @@ export function Header(props) {
       </div>
       <div>
         <button
-          className="md:hidden py-2 px-2  border-2 border-amber-700 bg-amber-100 rounded-sm shadow  p-2  hover: font-heebo text-base text-amber-700  hover:scale-105 hover:font-bold transition-all duration-200"
+          className="md:hidden py-2 px-2  border-2 border-amber-700 bg-amber-100 rounded-sm shadow  p-2  hover:font-heebo text-base text-amber-700  hover:scale-105 hover:font-bold transition-all duration-200"
           key="המבורגר"
           onClick={() => setIsMenuOpen(!IsMenuOpen)}
         >
@@ -60,9 +60,7 @@ export function Header(props) {
   }`}
         >
           <button
-            onClick={() =>
-              handleMobileMenuClick(() => props.setmainview("Greeting"))
-            }
+            onClick={() => handleMobileMenuClick("Greeting", null)}
             className="block w-full border-b-2 border-amber-600 py-2 px-3 text-right"
           >
             מסך הבית
@@ -79,7 +77,7 @@ export function Header(props) {
           ))}
 
           <button
-            onClick={() => handleMobileMenuClick("AboutMe")}
+            onClick={() => handleMobileMenuClick("AboutMe", null)}
             className="block w-full border-b-0 border-amber-600 py-1 px-3 text-right"
           >
             עלי
@@ -100,8 +98,8 @@ export function Header(props) {
             className="hidden md:flex px-5 py-2 border-2 border-amber-700 bg-amber-600 rounded-sm shadow p-2  hover:bg-amber-700 font-heebo text-base text-white hover:scale-105 hover:font-bold transition-all duration-200"
             key={artist.name}
             onClick={() => {
-              props.setcurrentlecture(artist);
-              props.setmainview("LecturePage");
+              props.setCurrentLecture(artist);
+              props.setMainView("LecturePage");
             }}
           >
             {artist.name}
@@ -110,7 +108,7 @@ export function Header(props) {
         <button
           className="hidden md:flex px-5 py-2 border-2 border-amber-700 bg-amber-600 rounded-sm shadow  p-2  hover:bg-amber-700 font-heebo text-base text-white  hover:scale-105 hover:font-bold transition-all duration-200"
           key="aboutMe"
-          onClick={() => props.setmainview("AboutMe")}
+          onClick={() => props.setMainView("AboutMe")}
         >
           {props.aboutMe.name}
         </button>

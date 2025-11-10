@@ -1,6 +1,6 @@
 import { artistsData } from "../artistdata";
 
-export function Greeting({ setcurrentlecture, setmainview }) {
+export function Greeting({ setCurrentLecture, setMainView }) {
   return (
     <div className="bg-white min-h-screen p-4">
       <h1 className="flex font-semibold text-3xl mt-6 mb-2 font-assistant text-amber-800">
@@ -30,13 +30,17 @@ export function Greeting({ setcurrentlecture, setmainview }) {
             key={lecture.name}
             className="border-amber-800 rounded-xl shadow-lg p-4 pt-2 cursor-pointer"
             onClick={() => {
-              setcurrentlecture(lecture);
-              setmainview("LecturePage");
+              setCurrentLecture(lecture);
+              setMainView("LecturePage");
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
             }}
           >
             {/* תוכן בצד ימין */}
-            <div className="flex-col">
-              <h2 className="text-right font-bold text-1xl mt-2 mr-4 font-noto text-amber-700">
+            <div className="flex flex-col">
+              <h2 className="text-right font-bold text-xl mt-2 mr-4 font-noto text-amber-700">
                 {lecture.name}
               </h2>
 
