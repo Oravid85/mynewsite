@@ -1,8 +1,8 @@
-import About_Me from "./assets/pictures/About_Me.jpeg";
+import oravid1 from "./assets/pictures/oravid1.jpeg";
 
 export const aboutMe = {
   name: "עלי",
-  picture: About_Me,
+  picture: oravid1,
   header: '"רק על עצמי לספר ידעתי..."',
   onartist: `אז מה עשיתי ב-20 השנים האחרונות?
 הדרכתי.
