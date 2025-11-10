@@ -17,7 +17,7 @@ import { lecturesCom } from "./lecturesrecom.js";
 import { artistsData } from "./artistdata";
 import { aboutMe } from "./oravid.js";
 import MyEmojies from "./components/Emojies";
-import { Greeting } from "./components/greeting.jsx";
+import { Greeting } from "./components/Greeting.jsx";
 
 export function App() {
   const [currentLecture, setCurrentLecture] = useState(null);
