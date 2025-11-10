@@ -58,9 +58,7 @@ export function App() {
               <LecturePage lectureData={currentLecture} />
             )}
             <div className="w-full flex flex-col items-center">
-              <div
-                className={`${bgcolor}  w-full flex flex-col md:flex-row-reverse`}
-              >
+              <div className={`${bgcolor}   flex flex-col md:flex-row-reverse`}>
                 <ContactForm
                   lectureData={currentLecture}
                   aboutMe={aboutMe}
