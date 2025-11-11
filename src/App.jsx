@@ -18,6 +18,7 @@ import { artistsData } from "./artistdata";
 import { aboutMe } from "./oravid.js";
 import MyEmojies from "./components/Emojies";
 import { Greeting } from "./components/Greeting.jsx";
+import { BuisnessSection } from "./components/BuisnessSection.jsx";
 
 export function App() {
   const [currentLecture, setCurrentLecture] = useState(null);
@@ -57,38 +58,15 @@ export function App() {
             {mainView === "LecturePage" && (
               <LecturePage lectureData={currentLecture} />
             )}
-            <div className="w-full flex flex-col items-center">
-              <div className={`${bgcolor}   flex flex-col md:flex-row-reverse`}>
-                <ContactForm
-                  lectureData={currentLecture}
-                  aboutMe={aboutMe}
-                  mainView={mainView}
-                />
 
-                {mainView === "LecturePage" && currentLecture && (
-                  <RecomCar
-                    lectureData={currentLecture}
-                    aboutMe={aboutMe}
-                    mainView={mainView}
-                    items={lecturesCom.filter(
-                      (item) => item.artist === currentLecture.name
-                    )}
-                  />
-                )}
-              </div>
-              <button
-                onClick={() => {
-                  setMainView("Greeting");
-                  window.scrollTo({
-                    top: 0,
-                    behavior: "smooth",
-                  });
-                }}
-                className="  w-40 border-2 border-amber-700 bg-amber-600 rounded-2xl shadow  p-2 m-2  font-heebo text-base text-white  hover:bg-amber-700 hover:font-bold transition-all duration-200"
-              >
-                הרצאות נוספות
-              </button>
-            </div>
+            <BuisnessSection
+              mainView={mainView}
+              currentLecture={currentLecture}
+              aboutMe={aboutMe}
+              lecturesCom={lecturesCom}
+              setMainView={setMainView}
+            />
+
             <Footer />
           </>
         }

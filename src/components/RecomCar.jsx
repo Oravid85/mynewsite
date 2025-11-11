@@ -47,24 +47,29 @@ export default function RecomCar({
             </div>
           ))}
         </div>
-        <div className="px-4 py-2 absolute bottom-0 w-full flex flex-row items-center justify-between">
-          <button
-            onClick={prevSlide}
-            className=" border-2 border-amber-700 bg-amber-600 rounded-2xl shadow  p-2  font-heebo text-base text-white  hover:bg-amber-700 hover:font-bold transition-all duration-200"
-          >
-            {"קודם"}
-          </button>
-          <div>
-            <span className="mx-1">{items.length}</span>
-            <span className="mx-1">/</span>
-            <span className="mx-1">{slide + 1}</span>
+
+        <div className="absolute bottom-0 left-0 right-0 flex justify-center items-center px-4">
+          <div className="w-full max-w-xl flex justify-between items-center">
+            <button
+              onClick={prevSlide}
+              className="border-2 border-amber-700 bg-amber-600 rounded-2xl shadow p-2 font-heebo text-base text-white hover:bg-amber-700 hover:font-bold transition-all duration-200"
+            >
+              קודם
+            </button>
+
+            <div className="flex items-center justify-center">
+              <span className="mx-1">{items.length}</span>
+              <span className="mx-1">/</span>
+              <span className="mx-1">{slide + 1}</span>
+            </div>
+
+            <button
+              onClick={nextSlide}
+              className="border-2 border-amber-700 bg-amber-600 rounded-2xl shadow p-2 font-heebo text-base text-white hover:bg-amber-700 hover:font-bold transition-all duration-200"
+            >
+              הבא
+            </button>
           </div>
-          <button
-            onClick={nextSlide}
-            className="  border-2 border-amber-700 bg-amber-600 rounded-2xl shadow  p-2  font-heebo text-base text-white hover:bg-amber-700 hover:font-bold transition-all duration-200"
-          >
-            {"הבא"}
-          </button>
         </div>
       </div>
     </div>
