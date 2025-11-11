@@ -18,7 +18,7 @@ export function BuisnessSection({
   return (
     <div className="w-full flex flex-col items-center">
       <div className={`${bgcolor} w-full `}>
-        <div className="flex flex-col justify-center md:flex-row-reverse md:ml-4">
+        <div className="flex flex-col justify-center md:flex-row-reverse md:ml-9">
           <ContactForm
             lectureData={currentLecture}
             aboutMe={aboutMe}
