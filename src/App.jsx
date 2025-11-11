@@ -41,47 +41,45 @@ export function App() {
       ? aboutMe.bgColor
       : currentLecture.bgColor;
   return (
-    <Router>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Header
-                artistsData={artistsData}
-                aboutMe={aboutMe}
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <>
+            <Header
+              artistsData={artistsData}
+              aboutMe={aboutMe}
+              setCurrentLecture={setCurrentLecture}
+              setMainView={setMainView}
+              currentLecture={currentLecture}
+            />
+            {/* <FontClass /> */}
+            {mainView === "Greeting" && (
+              <Greeting
+                setMainView={setMainView}
                 setCurrentLecture={setCurrentLecture}
-                setMainView={setMainView}
-                currentLecture={currentLecture}
               />
-              {/* <FontClass /> */}
-              {mainView === "Greeting" && (
-                <Greeting
-                  setMainView={setMainView}
-                  setCurrentLecture={setCurrentLecture}
-                />
-              )}
-              {mainView === "AboutMe" && <AboutMe aboutMe={aboutMe} />}
-              {mainView === "LecturePage" && (
-                <LecturePage lectureData={currentLecture} />
-              )}
+            )}
+            {mainView === "AboutMe" && <AboutMe aboutMe={aboutMe} />}
+            {mainView === "LecturePage" && (
+              <LecturePage lectureData={currentLecture} />
+            )}
 
-              <BuisnessSection
-                mainView={mainView}
-                currentLecture={currentLecture}
-                aboutMe={aboutMe}
-                lecturesCom={lecturesCom}
-                setMainView={setMainView}
-              />
+            <BuisnessSection
+              mainView={mainView}
+              currentLecture={currentLecture}
+              aboutMe={aboutMe}
+              lecturesCom={lecturesCom}
+              setMainView={setMainView}
+            />
 
-              <Footer />
-            </>
-          }
-        />
-        <Route path="/404" element={<NotFoundPage />} />
-        <Route path="/test" element={<TestPage />} />
-        <Route path="*" element={<Navigate to="/404" replace />} />
-      </Routes>
-    </Router>
+            <Footer />
+          </>
+        }
+      />
+      <Route path="/404" element={<NotFoundPage />} />
+      <Route path="/test" element={<TestPage />} />
+      <Route path="*" element={<Navigate to="/404" replace />} />
+    </Routes>
   );
 }
