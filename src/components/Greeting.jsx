@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import { artistsData } from "../artistdata";
 
 export function Greeting({ setCurrentLecture, setMainView }) {
+  const navigate = useNavigate();
   return (
     <div className="bg-white min-h-screen p-4">
       <h1 className="flex font-semibold text-3xl mt-6 mb-2 font-assistant text-amber-800">
@@ -30,8 +32,7 @@ export function Greeting({ setCurrentLecture, setMainView }) {
             key={lecture.name}
             className="border-amber-800 rounded-xl shadow-lg p-4 pt-2 cursor-pointer"
             onClick={() => {
-              setCurrentLecture(lecture);
-              setMainView("LecturePage");
+              navigate(`/lectures/${lecture.slug}`);
               window.scrollTo({
                 top: 0,
                 behavior: "smooth",

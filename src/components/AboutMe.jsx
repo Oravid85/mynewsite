@@ -20,11 +20,6 @@ export function AboutMe({ aboutMe }) {
           <p className="text-justify leading-relaxed whitespace-pre-wrap m-4 mb-10 font-alef  text-xl md:text-lg  text-gray-800">
             {aboutMe.onartist}
           </p>
-
-          <h2 className="text-right font-bold text-2xl m-4 font-noto text-amber-700">
-            ממליצים
-          </h2>
-          <RecomCar items={aboutMe.recommendations} />
         </div>
       </div>
     </div>
