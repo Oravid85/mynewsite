@@ -1,13 +1,14 @@
 import Poliker from "./assets/pictures/Poliker.png";
-import Bialik from "./assets/pictures/Bialik.webp";
-import Aris_San from "./assets/pictures/Aris_San.jpg";
+import Bialik from "./assets/pictures/Bialik.png";
+import ArisSan from "./assets/pictures/ArisSan.png";
+import zlileiHakeremVeHaoud from "./assets/pictures/zlileiHakeremVeHaoud.png";
 import zoharArgov from "./assets/pictures/zoharArgov.png";
 
 export const artistsData = [
   {
     name: "אריס סאן",
     slug: "aris-san",
-    picture: Aris_San,
+    picture: ArisSan,
     header: '"הוא לא היה איש חכם, אין מה לעשות"',
     onartist: `אריס סאן, הוא אחד מאבות המוזיקה והתרבות הישראלית וחלוץ המוזיקה הים-תיכונית בארץ.
 מי שהגיע ליפו כנער יווני בן 17 והתחיל לנגן גיטרה במועדונים, והפך לאחת מאושיות התרבות הגדולות ביותר בישראל בשנות ה-60 וה-70, 
@@ -53,7 +54,7 @@ export const artistsData = [
   {
     name: "צלילי הכרם וצלילי העוד",
     slug: "tselili-ha-kerem",
-    picture: Aris_San,
+    picture: zlileiHakeremVeHaoud,
     header: '"יום שישי תרצ"ט פרשת ויאמר"',
     onartist: `שני הרכבים מאוד מיוחדים פעלו בישראל בשנות ה-1970 וה-1980. צלילי הכרם וצלילי העוד. 
 הם היו דומים מאוד: הביאו שילוב של מוזיקת ארץ ישראל היפה, מוזיקה יוונית, שירי משוררים והורה מהקיבוצים, לצד גיטרה חשמלית בסגנון חדש, סלסולים ומאוולים. אבל גם לכל אחת סגנון וקהל משלה.

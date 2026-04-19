@@ -16,56 +16,62 @@ export default function RecomCar({
     setSlide(slide === 0 ? items.length - 1 : slide - 1);
   };
 
-  const bgcolor =
-    mainview === "Greeting"
-      ? "bg-white"
-      : mainview === "AboutMe"
-      ? aboutMe.bgColor
-      : lectureData.bgColor;
-
-  // console.log("bgcolor", bgcolor, lectureData, aboutMe);
   return (
-    <div className={` w-full flex justify-center my-4 md:mb-0 `}>
-      <div className="flex flex-col relative h-[360px] w-full max-w-xl mx-4 overflow-hidden rounded-2xl shadow-lg bg-amber-100 p-4">
+    <div className="w-full flex justify-center my-4 md:my-0 h-full" dir="ltr">
+      {" "}
+      {/* הקונטיינר הצהוב - ללא Padding בצדדים כדי לא להרוס את חישוב ה-100% */}
+      <div className="flex flex-col relative h-full w-full max-w-xl mx-4 overflow-hidden rounded-2xl shadow-lg bg-amber-100 pt-4">
+        {/* פס הסליידים שזז */}
         <div
-          className="  h-[280px] flex transition-transform duration-500 ease-in-out gap-4.5  "
-          style={{ transform: `translateX(+${slide * 104}%)` }}
+          className="h-[280px] flex transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${slide * 100}%)` }}
         >
           {items.map((item, index) => (
+            /* מעטפת שקופה לכל סלייד - תמיד 100% מהרוחב */
             <div
               key={index}
-              className="flex-shrink-0 flex flex-col w-full items-center justify-center bg-white h-64 rounded-2xl shadow-xl p-2 "
+              className="w-full flex-shrink-0 flex justify-center px-4"
             >
-              <p className="text-2xl md:text-xl text-center font-medium text-amber-800 px-4">
-                {item.text}
-              </p>
-              {item.author && (
-                <p className=" px-6 w-full text-xl md:text-base flex justify-end mt-4 text-gray-600">
-                  {item.author}
+              {/* הכרטיסייה הלבנה - העיצוב עצמו */}
+              <div
+                className="w-full flex flex-col items-center justify-center bg-white h-64 rounded-2xl shadow-xl p-6"
+                dir="rtl"
+              >
+                <p className="text-2xl md:text-xl text-center font-medium text-amber-800 px-2">
+                  {item.text}
                 </p>
-              )}
+                {item.author && (
+                  <p className="w-full text-lg md:text-base flex justify-end mt-4 text-gray-600 italic">
+                    {item.author}
+                  </p>
+                )}
+              </div>
             </div>
           ))}
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 flex justify-center items-center px-4">
-          <div className="w-full max-w-xl flex justify-between items-center">
+        {/* ניווט ומספור */}
+        <div
+          className="absolute bottom-6 left-0 right-0 flex justify-center items-center px-8"
+          dir="rtl"
+        >
+          <div className="w-full flex justify-between items-center">
             <button
               onClick={prevSlide}
-              className="border-2 border-amber-700 bg-amber-600 rounded-2xl shadow p-2 font-heebo text-base text-white hover:bg-amber-700 hover:font-bold transition-all duration-200"
+              className="border-2 border-amber-700 bg-amber-600 rounded-2xl shadow-md px-5 py-1 text-white hover:bg-amber-700 transition-all active:scale-95"
             >
               קודם
             </button>
 
-            <div className="flex items-center justify-center">
-              <span className="mx-1">{items.length}</span>
+            <div className="flex items-center justify-center font-bold text-amber-900 bg-amber-200/50 px-4 py-1 rounded-full">
+              <span>{slide + 1}</span>
               <span className="mx-1">/</span>
-              <span className="mx-1">{slide + 1}</span>
+              <span>{items.length}</span>
             </div>
 
             <button
               onClick={nextSlide}
-              className="border-2 border-amber-700 bg-amber-600 rounded-2xl shadow p-2 font-heebo text-base text-white hover:bg-amber-700 hover:font-bold transition-all duration-200"
+              className="border-2 border-amber-700 bg-amber-600 rounded-2xl shadow-md px-5 py-1 text-white hover:bg-amber-700 transition-all active:scale-95"
             >
               הבא
             </button>
