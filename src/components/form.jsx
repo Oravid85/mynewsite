@@ -26,6 +26,17 @@ export default function ContactForm({ lectureData, aboutMe, mainview }) {
       });
 
       if (response.ok) {
+        const scriptUrl = "https://script.google.com/macros/s/AKfycbyj20kN480ADPUbLOpbV4MCFvq-Bcnf8AUIsfXpjI5JHXroClcI-glYIAqfvcbDwQ/exec"; 
+        
+        await fetch(scriptUrl, {
+          method: "POST",
+          body: new URLSearchParams({
+            name: name,
+            email: email,
+            phone: telNum,
+            type: "פניה מהאתר"
+          })
+        });
         alert("הטופס נשלח בהצלחה!");
         setName("");
         setEmail("");
