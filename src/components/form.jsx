@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 export default function ContactForm({ lectureData, aboutMe, mainview }) {
   const navigate = useNavigate();
 
@@ -51,12 +52,12 @@ export default function ContactForm({ lectureData, aboutMe, mainview }) {
   };
 
   return (
-    <div className={`  w-full flex justify-center h-full`}>
+    <div className="w-full flex justify-center h-full">
       <form
         onSubmit={handleSubmit}
-        className=" justify-center  h-full flex flex-col items-center space-y-4 w-[90%] max-w-sm bg-amber-100 px-6 py-6 rounded-2xl shadow-lg  md:mr-auto md:w-[400px]"
+        className="justify-center h-full flex flex-col items-center space-y-4 w-[90%] max-w-sm bg-gradient-to-b from-amber-50/70 to-amber-100/40 border border-amber-200/60 px-6 py-8 rounded-3xl shadow-md md:mr-auto md:w-[400px]"
       >
-        <h2 className="text-center text-2xl font-noto font-semibold text-amber-700">
+        <h2 className="text-center text-xl font-noto font-bold text-amber-900 mb-2 leading-relaxed">
           השאירו פרטים ואחזור אליכם בהקדם!
         </h2>
 
@@ -65,7 +66,7 @@ export default function ContactForm({ lectureData, aboutMe, mainview }) {
           placeholder="שם מלא"
           value={name}
           onChange={(ev) => setName(ev.target.value)}
-          className="bg-gray-200 border-2 border-amber-700 p-2 rounded-2xl text-center"
+          className="w-full bg-white border border-amber-200/80 focus:border-amber-600 focus:outline-none p-3 rounded-2xl text-center shadow-xs text-gray-800 placeholder-gray-400 transition-all"
           required
         />
         <input
@@ -73,7 +74,7 @@ export default function ContactForm({ lectureData, aboutMe, mainview }) {
           placeholder='דוא"ל'
           value={email}
           onChange={(ev) => setEmail(ev.target.value)}
-          className="bg-gray-200 border-2 border-amber-700 p-2 rounded-2xl text-center"
+          className="w-full bg-white border border-amber-200/80 focus:border-amber-600 focus:outline-none p-3 rounded-2xl text-center shadow-xs text-gray-800 placeholder-gray-400 transition-all"
           required
         />
         <input
@@ -81,12 +82,12 @@ export default function ContactForm({ lectureData, aboutMe, mainview }) {
           placeholder="מספר טלפון"
           value={telNum}
           onChange={(ev) => setTelNum(ev.target.value)}
-          className="bg-gray-200 border-2 border-amber-700 p-2 rounded-2xl text-center"
+          className="w-full bg-white border border-amber-200/80 focus:border-amber-600 focus:outline-none p-3 rounded-2xl text-center shadow-xs text-gray-800 placeholder-gray-400 transition-all"
         />
 
         <button
           type="submit"
-          className="w-24 bg-amber-600 text-white font-heebo text-base py-2 px-4 rounded-2xl border-2 border-amber-700 hover:bg-amber-700 self-center"
+          className="inline-flex items-center justify-center px-8 py-2.5 mt-2 border-2 border-amber-600 bg-white hover:bg-amber-50 text-amber-900 font-semibold rounded-2xl shadow-sm transition-all duration-300 active:scale-95 self-center text-base"
         >
           שלח
         </button>
