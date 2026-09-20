@@ -7,9 +7,14 @@ export default function ContactForm({ lectureData, aboutMe, mainview }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [telNum, setTelNum] = useState("");
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const handleSubmit = async (ev) => {
     ev.preventDefault();
+    setIsSubmitting(true);
+    setIsVisible(false);
 
     try {
       const response = await fetch("https://formspree.io/f/mdkwylbb", {
@@ -22,7 +27,7 @@ export default function ContactForm({ lectureData, aboutMe, mainview }) {
           name,
           email: email,
           message: `טלפון: ${telNum}`,
-          replyto: email, // עוזר ל-Formspree לזהות את שולח ההודעה
+          replyto: email,
         }),
       });
 
@@ -38,16 +43,26 @@ export default function ContactForm({ lectureData, aboutMe, mainview }) {
             type: "פניה מהאתר"
           })
         });
-        alert("הטופס נשלח בהצלחה!");
+
+        // מנקה את השדות ומציג את ההודעה עם פתיחה הדרגתית של הקונטיינר
         setName("");
         setEmail("");
         setTelNum("");
+        setIsVisible(true);
+
+        // אחרי 4 שניות סוגרים את התיבה והקונטיינר מצטמצם בחזרה ברכות
+        setTimeout(() => {
+          setIsVisible(false);
+        }, 4000);
+
       } else {
         navigate("/404");
       }
     } catch (error) {
       console.error("Error submitting form:", error);
       navigate("/404");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -61,6 +76,17 @@ export default function ContactForm({ lectureData, aboutMe, mainview }) {
           השאירו פרטים ואחזור אליכם בהקדם!
         </h2>
 
+        {/* קונטיינר עוטף שמתרחב ומתכווץ בהדרגה (אקורדיון חלק) */}
+        <div 
+          className={`w-full overflow-hidden transition-all duration-700 ease-in-out ${
+            isVisible ? "max-h-24 opacity-100 mb-2" : "max-h-0 opacity-0 mb-0"
+          }`}
+        >
+          <div className="w-full bg-green-100 border border-green-300 text-green-800 px-4 py-3 rounded-2xl text-center text-sm font-medium">
+            הפרטים נשלחו בהצלחה! אצור קשר בהקדם.
+          </div>
+        </div>
+
         <input
           type="text"
           placeholder="שם מלא"
@@ -68,6 +94,7 @@ export default function ContactForm({ lectureData, aboutMe, mainview }) {
           onChange={(ev) => setName(ev.target.value)}
           className="w-full bg-white border border-amber-200/80 focus:border-amber-600 focus:outline-none p-3 rounded-2xl text-center shadow-xs text-gray-800 placeholder-gray-400 transition-all"
           required
+          disabled={isSubmitting}
         />
         <input
           type="email"
@@ -76,6 +103,7 @@ export default function ContactForm({ lectureData, aboutMe, mainview }) {
           onChange={(ev) => setEmail(ev.target.value)}
           className="w-full bg-white border border-amber-200/80 focus:border-amber-600 focus:outline-none p-3 rounded-2xl text-center shadow-xs text-gray-800 placeholder-gray-400 transition-all"
           required
+          disabled={isSubmitting}
         />
         <input
           type="tel"
@@ -83,13 +111,19 @@ export default function ContactForm({ lectureData, aboutMe, mainview }) {
           value={telNum}
           onChange={(ev) => setTelNum(ev.target.value)}
           className="w-full bg-white border border-amber-200/80 focus:border-amber-600 focus:outline-none p-3 rounded-2xl text-center shadow-xs text-gray-800 placeholder-gray-400 transition-all"
+          disabled={isSubmitting}
         />
 
         <button
           type="submit"
-          className="inline-flex items-center justify-center px-8 py-2.5 mt-2 border-2 border-amber-600 bg-white hover:bg-amber-50 text-amber-900 font-semibold rounded-2xl shadow-sm transition-all duration-300 active:scale-95 self-center text-base"
+          disabled={isSubmitting}
+          className={`inline-flex items-center justify-center px-8 py-2.5 mt-2 border-2 border-amber-600 bg-white text-amber-900 font-semibold rounded-2xl shadow-sm transition-all duration-300 self-center text-base ${
+            isSubmitting 
+              ? "opacity-50 cursor-not-allowed" 
+              : "hover:bg-amber-50 active:scale-95"
+          }`}
         >
-          שלח
+          {isSubmitting ? "שולח..." : "שלח"}
         </button>
       </form>
     </div>
