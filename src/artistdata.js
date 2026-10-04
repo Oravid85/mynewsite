@@ -7,6 +7,7 @@ import dannysanderson from "./assets/pictures/dannysanderson.png";
 import yehonatanGeffen from "./assets/pictures/yehonatanGeffen.png";
 import zeBrara from "./assets/pictures/zeBrara.png";
 import margol from "./assets/pictures/margol.png";
+import gidiGov from "./assets/pictures/gidiGov.png";
 
 export const artistsData = [
   {
@@ -146,6 +147,25 @@ onlecture: `
 
  `,
 
+    bgColor: "bg-amber-50 ",
+  },
+
+ {
+    name: "גידי גוב",
+    slug: "gidi-gov",
+    picture: gidiGov,
+    header: '"לא יודע מה להגיד לך, האיש הזה הוא אני..."',
+    onartist: `לא צריך להציג את גידי גוב. אבל אם אלה החוקים של הפורמט... 
+גדעון גוב, נולד בשנת 1950 בתל אביב, ועבר כילד עם משפחתו לאילת. 
+למרות שהוא לא תכנן להיות זמר, הוא הלך למבחנים ללהקת הנח"ל בהמלצתו של יאיר רוזנבלום, ומשם ההמשך ידוע: 
+להקת הנח"ל, כוורת, גזוז, דודה, זהו-זה, הופה הי, קריירת סולו מופתית כזמר, וגם – שחקן, מנחה, פרזנטור. 
+
+וכל הזמן הזה, תמיד אדם ישיר, תמיד 'כאחד האדם'. תמיד חבר'המן.`,
+    onlecture: `בשעה של סיפורים, סרטונים, שירים, מוזיקה חיה ותמונות ננסה להאיר שניים מהמאפיינים המרכזיים של דמותו של גידי גוב: 
+המולטיטאלנטיות והחברהמניות. 
+
+ננסה לבחון מאיפה המאפיינים האלה מגיעים, למה הם קיימים בתרבות שלנו בכלל, ואיך הם באים לידי ביטוי במסלול חייו של גידי. 
+ונראה כמה גידי גוב השפיע על הישראליות עצמה.`,
     bgColor: "bg-amber-50 ",
   },
 
