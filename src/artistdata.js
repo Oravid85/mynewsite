@@ -7,7 +7,7 @@ import dannysanderson from "./assets/pictures/dannysanderson.png";
 import yehonatanGeffen from "./assets/pictures/yehonatanGeffen.png";
 import zeBrara from "./assets/pictures/zeBrara.png";
 import margol from "./assets/pictures/margol.png";
-import gidiGov from "./assets/pictures/gidiGov.png";
+import gidiGov from "./assets/pictures/gidigov.png";
 
 export const artistsData = [
   {
