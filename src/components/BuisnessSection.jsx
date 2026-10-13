@@ -57,7 +57,7 @@ export function BuisnessSection({ lecturesCom, aboutMe }) {
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="inline-flex items-center justify-center px-6 py-3 border-2 border-amber-600 bg-amber-50 hover:bg-amber-100 text-amber-900 font-semibold rounded-2xl shadow-sm transition-all duration-300"
         >
-          ← הרצאות נוספות
+           הרצאות נוספות
         </Link>
       </div>
     </div>
