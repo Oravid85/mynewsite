@@ -18,13 +18,20 @@ export function LecturePage() {
       </h1>
 
       <div className="flex flex-col md:flex-row-reverse items-center md:items-start gap-8 md:gap-12">
-        {/* תמונה דינאמית ומאוזנת (ללא מעיוותים או מתיחות) */}
-        <div className="w-full md:w-[420px] flex-shrink-0 flex justify-center">
+        {/* אזור התמונה והקרדיט */}
+        <div className="w-full md:w-[420px] flex-shrink-0 flex flex-col items-center">
           <img
             className="w-full max-w-sm md:max-w-none h-auto max-h-[450px] object-contain rounded-3xl shadow-md border border-amber-200/60 bg-white/50 p-2"
             src={currentLecture.picture}
             alt={currentLecture.header}
           />
+          
+          {/* קרדיט תמונה עדין וממוקד מתחת לתמונה */}
+          {currentLecture.credit && (
+            <p className="text-[11px] text-gray-500 mt-2 text-center font-alef px-2 leading-tight">
+              {currentLecture.credit}
+            </p>
+          )}
         </div>
 
         {/* טקסטים מוגדלים ונוחים לקריאה */}

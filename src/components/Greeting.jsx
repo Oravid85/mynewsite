@@ -41,9 +41,13 @@ export function Greeting() {
               }}
             >
               <div className="flex flex-col items-center">
-                <h2 className="text-right font-bold text-xl mb-4 font-noto text-amber-800 group-hover:text-amber-950 transition-colors w-full line-clamp-1">
+                <h2 className="text-right font-bold text-xl mb-2 font-noto text-amber-800 group-hover:text-amber-950 transition-colors w-full line-clamp-1">
                   {lecture.name}
                 </h2>
+                <p className="text-base italic font-semibold font-noto text-amber-800 group-hover:text-amber-950 transition-colors line-clamp-2 mt-1">
+    {lecture.header}
+  </p>
+
 
                 <div className="w-full h-40 mb-4 overflow-hidden rounded-xl flex items-center justify-center bg-amber-50">
                   <img

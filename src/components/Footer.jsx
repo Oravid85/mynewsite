@@ -11,7 +11,7 @@ export function Footer() {
         </h3>
 
         {/* קישורים בעיצוב טקסטואלי נקי */}
-        <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-center md:items-start">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-center md:items-start mb-8">
           <a
             href="https://wa.me/+972546738697"
             target="_blank"
@@ -30,6 +30,14 @@ export function Footer() {
             אפשר גם בדוא"ל
           </a>
         </div>
+
+        {/* קו מפריד עדין לפני הדיסקליימר */}
+        <div className="w-full border-t border-amber-100/80 pt-6 mt-2">
+          <p className="text-xs text-amber-900/60 leading-relaxed max-w-3xl">
+            ההרצאות והמופעים המוצגים באתר הינם הרצאות עיון, סקירות תרבותיות ומופעי מחווה עצמאיים. האתר והמרצה אינם ייצוג רשמי, מנהלים או שלוחים של האמנים המוזכרים בו, ואין בהצגת התוכן משום חסות או שיתוף פעולה מסחרי רשמי עמם, אלא אם צוין אחרת במפורש.
+          </p>
+        </div>
+
       </div>
     </footer>
   );
