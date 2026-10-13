@@ -1,6 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import { artistsData } from "../artistdata";
 
+// הנתיבים הנכונים מתוך התיקייה של הקומפוננטה
+import or_06 from "../assets/lecturesPictures/or_06.jpg"; // לדסקטופ
+import or_04 from "../assets/lecturesPictures/or_04.jpg"; // למובייל
+
 export function Greeting() {
   const navigate = useNavigate();
 
@@ -16,13 +20,25 @@ export function Greeting() {
           על האתר
         </h2>
 
-        <p className="text-justify leading-relaxed whitespace-pre-wrap m-4 mb-10 font-alef text-lg text-gray-800">
+        <p className="text-justify leading-relaxed whitespace-pre-wrap m-4 mb-6 font-alef text-lg text-gray-800">
           אם אתם מחפשים הרצאות מעניינות על מוזיקה ישראלית, אומנים ישראלים, קצת על
           השירה העברית ועל אנשי רוח שעיצבו את תרבותנו, הגעתם למקום הנכון:
           <br />
           שמי אור, ואני מדריך, נגן, ומרצה, ואשמח לפגוש אתכם לשעה-שעתיים, לדבר,
           להראות ולנגן את המוזיקה של האנשים שהשפיעו על כולנו.
         </p>
+
+        {/* באנר תמונה רוחבי עם החלפה אוטומטית לפי סוג המסך */}
+        <div className="w-full h-56 sm:h-72 md:h-96 mx-auto my-6 px-4 md:px-0 overflow-hidden rounded-2xl shadow-sm border border-amber-200 bg-amber-100 flex items-center justify-center">
+          <picture className="w-full h-full">
+            <source media="(min-width: 768px)" srcSet={or_06} />
+            <img
+              src={or_04}
+              alt="אור אביד בהרצאה מוזיקלית"
+              className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+            />
+          </picture>
+        </div>
 
         <h2 className="text-right font-bold text-2xl m-4 font-noto text-amber-700">
           הרצאות
