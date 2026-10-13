@@ -66,13 +66,27 @@ export function Header() {
               <FaBars size={20} />
             </button>
 
-            <Link 
-              to="/" 
-              onClick={handleLogoClick}
-              className="font-heebo text-2xl md:text-3xl font-bold text-amber-950"
-            >
-              אור אביד <span className="text-amber-600 font-normal text-xl">| הרצאות</span>
-            </Link>
+           <div className="flex items-center gap-1.5 font-heebo text-2xl md:text-3xl font-bold">
+  {/* לחצן "אור אביד" -> מוביל לדף הבית */}
+  <Link 
+    to="/" 
+    onClick={handleLogoClick}
+    className="text-amber-950 hover:text-amber-800 transition-colors"
+  >
+    אור אביד
+  </Link>
+
+  <span className="text-amber-600 font-normal text-xl">|</span>
+
+  {/* לחצן "הרצאות מוזיקליות" -> מוביל לדף /about-lectures */}
+  <Link 
+    to="/about-lectures" 
+    onClick={handleLogoClick}
+    className="text-amber-600 hover:text-amber-800 font-normal text-xl transition-colors"
+  >
+    הרצאות מוזיקליות
+  </Link>
+</div>
           </div>
 
           {/* קישורי יצירת קשר (דסקטופ) */}

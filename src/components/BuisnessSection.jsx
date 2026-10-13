@@ -17,9 +17,12 @@ export function BuisnessSection({ lecturesCom, aboutMe }) {
 
   return (
     <div className="w-full flex flex-col items-center">
-      <div className={`${bgcolor} w-full py-12 px-6 md:px-12`}>
-        <div className="flex flex-col lg:flex-row items-stretch gap-8 w-full max-w-6xl mx-auto">
-          {/* אזור ההמלצות (רחב יותר) */}
+      {/* במובייל: px-2 בלבד למקסימום רוחב | במסכי מחשב (md): חוזר ל-px-12 המקורי */}
+      <div className={`${bgcolor} w-full py-8 md:py-12 px-2 sm:px-6 md:px-12`}>
+        {/* במובייל: gap-5 ליצירת מרווח עדין ונקי | במסכי מחשב: gap-8 המקורי */}
+        <div className="flex flex-col lg:flex-row items-stretch gap-5 lg:gap-8 w-full max-w-6xl mx-auto">
+          
+          {/* אזור ההמלצות / הקרוסלה */}
           <div className="w-full lg:w-2/3 flex flex-col">
             {!isLecturePage && aboutMe?.recommendations?.length > 0 && (
               <div className="h-full flex flex-col">
@@ -48,7 +51,7 @@ export function BuisnessSection({ lecturesCom, aboutMe }) {
       </div>
 
       {/* כפתור חזרה להרצאות נוספות */}
-      <div className="w-full max-w-6xl px-6 md:px-12 py-6 flex justify-start">
+      <div className="w-full max-w-6xl px-3 sm:px-6 md:px-12 py-6 flex justify-start">
         <Link
           to="/"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
