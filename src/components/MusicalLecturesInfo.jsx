@@ -120,7 +120,7 @@ export function MusicalLecturesInfo() {
               onClick={prevVideo}
               className="bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold px-4 py-2 rounded-xl transition-colors font-noto text-sm"
             >
-              → סרטון קודם
+              → קודם
             </button>
             
           {/* פג'ינציה סטנדרטית עם נקודות בערכת צבעי האתר */}
@@ -143,7 +143,7 @@ export function MusicalLecturesInfo() {
               onClick={nextVideo}
               className="bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold px-4 py-2 rounded-xl transition-colors font-noto text-sm"
             >
-              סרטון הבא ←
+              הבא ←
             </button>
           </div>
         </div>
