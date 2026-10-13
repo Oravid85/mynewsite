@@ -71,9 +71,9 @@ export function Greeting() {
                 {/* מעטפת התמונה:
                     במובייל: h-auto ללא הגבלת גובה - התמונה תפוס את מלוא הרוחב ותשמור על הפרופורציות שלה ללא חיתוך!
                     במחשב (md): h-40 ו-object-contain כפי שהיה בגרסה המקורית */}
-     <div className="w-full h-48 md:h-52 mb-4 overflow-hidden rounded-xl bg-amber-50/60 flex items-center justify-center">
+     <div className="w-full h-auto md:h-48 mb-4 overflow-hidden rounded-xl bg-amber-50 flex items-center justify-center">
   <img
-    className="w-full h-full object-contain object-center transition-transform duration-500 group-hover:scale-105"
+    className="w-full h-auto md:h-full object-cover md:object-contain object-center transition-transform duration-500 group-hover:scale-105"
     src={lecture.picture}
     alt={lecture.name}
   />
