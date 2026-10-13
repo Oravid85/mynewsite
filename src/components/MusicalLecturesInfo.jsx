@@ -123,9 +123,21 @@ export function MusicalLecturesInfo() {
               → סרטון קודם
             </button>
             
-            <span className="font-noto font-semibold text-amber-900 text-base">
-              {videos[currentVideoIndex].title} ({currentVideoIndex + 1} מתוך {videos.length})
-            </span>
+          {/* פג'ינציה סטנדרטית עם נקודות בערכת צבעי האתר */}
+  <div className="flex items-center gap-1.5 mx-2">
+    {videos.map((_, index) => (
+      <button
+        key={index}
+        onClick={() => goToVideo(index)} // ודא ששם הפונקציה שלך למעבר ישיר הוא כזה, או שנה בהתאם (למשל setCurrentVideoIndex)
+        aria-label={`עבור לסרטון ${index + 1}`}
+        className={`h-2.5 rounded-full transition-all duration-300 ${
+          currentVideoIndex === index
+            ? "w-6 bg-amber-700"     // נקודה פעילה: פס רחב בצבע ענבר כהה
+            : "w-2.5 bg-amber-200 hover:bg-amber-300" // נקודות לא פעילות: עיגולים קטנים
+        }`}
+      />
+    ))}
+  </div>
 
             <button
               onClick={nextVideo}

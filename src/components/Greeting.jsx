@@ -29,19 +29,13 @@ export function Greeting() {
         </p>
 
         {/* באנר תמונה רוחבי עדין ומזמין - שימוש בתגית <picture> */}
-<div className="w-full h-64 sm:h-80 md:h-96 mx-auto my-6 px-4 md:px-0 overflow-hidden rounded-2xl shadow-sm border border-amber-200 bg-amber-100 flex items-center justify-center">
-  <picture className="w-full h-full">
-    {/* הגדרה לדסקטופ */}
-    <source 
-      media="(min-width: 768px)" 
-      srcSet={or_06} 
-    />
-    
-    {/* הגדרת ברירת מחדל (למובייל) - שינוי ל-object-contain ו-object-top */}
+<div className="w-full h-72 md:h-96 my-6 overflow-hidden rounded-2xl shadow-sm border border-amber-200 bg-amber-100">
+  <picture className="w-full h-full block">
+    <source media="(min-width: 768px)" srcSet={or_06} />
     <img
       src={or_04}
       alt="אור אביד בהרצאה מוזיקלית"
-      className="w-full h-full object-contain object-top transition-transform duration-700 hover:scale-105"
+      className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
     />
   </picture>
 </div>
@@ -77,13 +71,13 @@ export function Greeting() {
                 {/* מעטפת התמונה:
                     במובייל: h-auto ללא הגבלת גובה - התמונה תפוס את מלוא הרוחב ותשמור על הפרופורציות שלה ללא חיתוך!
                     במחשב (md): h-40 ו-object-contain כפי שהיה בגרסה המקורית */}
-                <div className="w-full h-auto md:h-40 mb-4 overflow-hidden rounded-xl flex items-center justify-center bg-amber-50">
-                  <img
-                    className="w-full h-auto max-h-[350px] md:max-h-none md:h-full object-contain transition-transform duration-500 group-hover:scale-105"
-                    src={lecture.picture}
-                    alt={lecture.name}
-                  />
-                </div>
+     <div className="w-full h-48 md:h-52 mb-4 overflow-hidden rounded-xl bg-amber-50/60 flex items-center justify-center">
+  <img
+    className="w-full h-full object-contain object-center transition-transform duration-500 group-hover:scale-105"
+    src={lecture.picture}
+    alt={lecture.name}
+  />
+</div>
 
                 <p className="text-justify leading-relaxed font-alef text-base text-gray-800 mb-6 w-full line-clamp-6">
                   {lecture.onlecture}
