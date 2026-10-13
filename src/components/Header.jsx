@@ -1,18 +1,21 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
-import { FaWhatsapp, FaEnvelope, FaBars } from "react-icons/fa";
+import { FaWhatsapp, FaEnvelope, FaBars, FaChevronDown } from "react-icons/fa";
 import { artistsData } from "../artistdata";
 
 export function Header() {
   const menuRef = useRef(null);
   const buttonRef = useRef(null);
   const [IsMenuOpen, setIsMenuOpen] = useState(false);
+  // סטייט חדש לשליטה בפתיחה/סגירה של תת-התפריט "הרצאות"
+  const [isLecturesSubOpen, setIsLecturesSubOpen] = useState(false);
   const location = useLocation();
 
   // ===== גלילה למעלה בכל שינוי URL =====
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     setIsMenuOpen(false);
+    setIsLecturesSubOpen(false);
   }, [location.pathname]);
 
   // ===== סגירה של התפריט בלחיצה מחוץ =====
@@ -25,6 +28,7 @@ export function Header() {
         !buttonRef.current.contains(event.target)
       ) {
         setIsMenuOpen(false);
+        setIsLecturesSubOpen(false);
       }
     };
 
@@ -41,6 +45,7 @@ export function Header() {
   // פונקציה ייעודית לחזרה לראש הדף בלחיצה על הלוגו
   const handleLogoClick = () => {
     setIsMenuOpen(false);
+    setIsLecturesSubOpen(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -92,7 +97,7 @@ export function Header() {
           </div>
         </div>
 
-        {/* ===== תפריט נפתח ===== */}
+        {/* ===== תפריט נפתח היררכי ===== */}
         <div className="max-w-5xl mx-auto px-4 relative">
           <div
             ref={menuRef}
@@ -108,26 +113,61 @@ export function Header() {
               onClick={() => setIsMenuOpen(false)}
               className="block w-full rounded-xl py-2 px-3 text-right hover:bg-amber-50 transition-colors"
             >
-              מסך הבית
+              ברוכים הבאים!
             </Link>
 
             <div className="border-t border-amber-100 my-1"></div>
 
-            {/* הרצאות */}
-            {artistsData.map((artist) => (
-              <Link
-                key={artist.name}
-                to={`/lectures/${artist.slug}`}
-                onClick={() => setIsMenuOpen(false)}
-                className="block w-full rounded-xl py-2 px-3 text-right hover:bg-amber-50 transition-colors text-amber-800"
-              >
-                {artist.name}
-              </Link>
-            ))}
+            {/* רמה ראשונה: על ההרצאות */}
+            <Link
+              to="/about-lectures"
+              onClick={() => setIsMenuOpen(false)}
+              className="block w-full rounded-xl py-2 px-3 text-right hover:bg-amber-50 transition-colors"
+            >
+              מה זה הרצאה מוזיקלית?
+            </Link>
 
             <div className="border-t border-amber-100 my-1"></div>
 
-            {/* About Me */}
+            {/* רמה ראשונה: הרצאות (עם כפתור פתיחה לרמה שניה) */}
+            <div>
+              <button
+                onClick={() => setIsLecturesSubOpen((prev) => !prev)}
+                className="w-full flex items-center justify-between rounded-xl py-2 px-3 text-right hover:bg-amber-50 transition-colors text-amber-950 font-semibold"
+              >
+                <span>פירוט ההרצאות</span>
+                <FaChevronDown
+                  size={12}
+                  className={`transition-transform duration-200 text-amber-700 ${
+                    isLecturesSubOpen ? "rotate-180" : ""
+                  }`}
+                />
+                
+              </button>
+
+              {/* רמה שניה: פירוט ההרצאות (נפתח רק כשלוחצים על הרצאות) */}
+              {isLecturesSubOpen && (
+                <div className="pr-4 mt-1 space-y-1 border-r-2 border-amber-200 mr-2">
+                  {artistsData.map((artist) => (
+                    <Link
+                      key={artist.name}
+                      to={`/lectures/${artist.slug}`}
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsLecturesSubOpen(false);
+                      }}
+                      className="block w-full rounded-xl py-1.5 px-3 text-right hover:bg-amber-50 transition-colors text-sm text-amber-800"
+                    >
+                      {artist.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div className="border-t border-amber-100 my-1"></div>
+
+            {/* רמה ראשונה: עלי */}
             <Link
               to="/about"
               onClick={() => setIsMenuOpen(false)}

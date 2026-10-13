@@ -3,13 +3,14 @@ import {
   Routes,
   Route,
   Navigate,
-  useLocation, // <-- הוספנו את זה
+  useLocation,
 } from "react-router-dom";
 import NotFoundPage from "./pages/NotFoundPage";
 import { TestPage } from "./pages/TestPage";
 
 import { LecturePage } from "./components/LecturePage";
 import { AboutMe } from "./components/AboutMe.jsx";
+import { MusicalLecturesInfo } from "./components/MusicalLecturesInfo.jsx"; // <-- 1. ייבוא הקומפוננטה החדשה
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { Greeting } from "./components/Greeting.jsx";
@@ -28,14 +29,13 @@ import ScrollToTop from "./components/ScrollToTop.jsx";
 import FloatingWhatsApp from "./components/FloatingWhatsApp.jsx";
 
 export function App() {
-  const location = useLocation(); // <-- מקבלים את המיקום הנוכחי
+  const location = useLocation();
 
   return (
     <>
       <ScrollToTop />
       <Header artistsData={artistsData} aboutMe={aboutMe} />
       
-    
       <div key={location.pathname} className="animate-fade-in">
         <Routes>
           {/* דף הבית */}
@@ -43,6 +43,9 @@ export function App() {
 
           {/* דף About Me */}
           <Route path="/about" element={<AboutMe aboutMe={aboutMe} />} />
+
+          {/* דף הרצאות מוזיקליות */}
+          <Route path="/about-lectures" element={<MusicalLecturesInfo />} /> {/* <-- 2. הוספת הראוט החדש */}
 
           {/* דף הרצאה */}
           <Route path="/lectures/:slug" element={<LecturePage />} />
