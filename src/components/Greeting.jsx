@@ -28,17 +28,23 @@ export function Greeting() {
           להראות ולנגן את המוזיקה של האנשים שהשפיעו על כולנו.
         </p>
 
-        {/* באנר תמונה רוחבי עם החלפה אוטומטית לפי סוג המסך */}
-        <div className="w-full h-56 sm:h-72 md:h-96 mx-auto my-6 px-4 md:px-0 overflow-hidden rounded-2xl shadow-sm border border-amber-200 bg-amber-100 flex items-center justify-center">
-          <picture className="w-full h-full">
-            <source media="(min-width: 768px)" srcSet={or_06} />
-            <img
-              src={or_04}
-              alt="אור אביד בהרצאה מוזיקלית"
-              className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
-            />
-          </picture>
-        </div>
+        {/* באנר תמונה רוחבי עדין ומזמין - שימוש בתגית <picture> */}
+<div className="w-full h-64 sm:h-80 md:h-96 mx-auto my-6 px-4 md:px-0 overflow-hidden rounded-2xl shadow-sm border border-amber-200 bg-amber-100 flex items-center justify-center">
+  <picture className="w-full h-full">
+    {/* הגדרה לדסקטופ */}
+    <source 
+      media="(min-width: 768px)" 
+      srcSet={or_06} 
+    />
+    
+    {/* הגדרת ברירת מחדל (למובייל) - שינוי ל-object-contain ו-object-top */}
+    <img
+      src={or_04}
+      alt="אור אביד בהרצאה מוזיקלית"
+      className="w-full h-full object-contain object-top transition-transform duration-700 hover:scale-105"
+    />
+  </picture>
+</div>
 
         <h2 className="text-right font-bold text-2xl m-4 font-noto text-amber-700">
           הרצאות
