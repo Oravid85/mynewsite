@@ -1,4 +1,5 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+
 import { artistsData } from "../artistdata";
 
 // הנתיבים הנכונים מתוך התיקייה של הקומפוננטה
@@ -21,12 +22,20 @@ export function Greeting() {
         </h2>
 
         <p className="text-justify leading-relaxed whitespace-pre-wrap m-4 mb-6 font-alef text-lg text-gray-800">
-          אם אתם מחפשים הרצאות מעניינות על מוזיקה ישראלית, אומנים ישראלים, קצת על
-          השירה העברית ועל אנשי רוח שעיצבו את תרבותנו, הגעתם למקום הנכון:
-          <br />
-          שמי אור, ואני מדריך, נגן, ומרצה, ואשמח לפגוש אתכם לשעה-שעתיים, לדבר,
-          להראות ולנגן את המוזיקה של האנשים שהשפיעו על כולנו.
-        </p>
+  אם אתם מחפשים הרצאות מעניינות על מוזיקה ישראלית, אומנים ישראלים, קצת על
+  השירה העברית ועל אנשי רוח שעיצבו את תרבותנו, הגעתם למקום הנכון:
+  <br />
+  שמי אור, ואני מדריך, נגן, ומרצה, ואשמח לפגוש אתכם לשעה-שעתיים, לדבר,
+  להראות ולנגן את המוזיקה של האנשים שהשפיעו על כולנו.
+  <br /><br />
+  <span className="font-semibold text-amber-900">מעוניינים להבין יותר מה הן הרצאות מוזיקליות?</span>{' '}
+  <Link 
+    to="/about-lectures"
+    className="text-amber-700 hover:text-amber-800 underline font-semibold transition-colors"
+  >
+    לחצו כאן
+  </Link>
+</p>
 
         {/* באנר תמונה רוחבי עדין ומזמין - שימוש בתגית <picture> */}
 <div className="w-full h-72 md:h-96 my-6 overflow-hidden rounded-2xl shadow-sm border border-amber-200 bg-amber-100">
