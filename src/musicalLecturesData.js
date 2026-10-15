@@ -40,6 +40,11 @@ export const musicalLecturesInfoData = {
     { id: "c1bI2aEPiSg", title: "אור בהרצאה 03" },
     { id: "mP9TKCJP0lk", title: "אור בהרצאה 04" },
     { id: "etZDAT7hifQ", title: "אור בהרצאה 05" },
+  {id: "XE5V2HeF8FY", title: "אור בהרצאה 06" },
+  {id: "4T3DQbREGzE", title: "אור בהרצאה 07" },
+  {id: "pRDItz75keY", title: "אור בהרצאה 08" },
+  {id: "-IYSOX183Gc", title: "אור בהרצאה 09" },
+
     
   ]
 };
